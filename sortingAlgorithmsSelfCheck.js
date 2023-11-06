@@ -52,9 +52,9 @@ let insertionSort = (array) => {
 };
 
 console.log(`array to be sorted`);
-console.table([5, 4, 3, 2, 1]);
 let test__array = [5, 4, 3, 2, 1];
 
+console.table(test__array);
 console.table(insertionSort(test__array));
 // console.log('bubble Sort test');
 // console.table(bubbleSort([5,4,3,2,1]));
