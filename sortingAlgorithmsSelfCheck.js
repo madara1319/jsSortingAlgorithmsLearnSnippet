@@ -56,7 +56,7 @@ let test__array = [5, 4, 3, 2, 1];
 
 console.table(test__array);
 console.table(insertionSort(test__array));
-// console.log('bubble Sort test');
-// console.table(bubbleSort([5,4,3,2,1]));
-// console.log('Selection Sort test');
-// console.table(selectionSort([5,4,3,2,1]));
+ console.log('bubble Sort test');
+ console.table(bubbleSort(test__array));
+ console.log('Selection Sort test');
+ console.table(selectionSort(test__array));
