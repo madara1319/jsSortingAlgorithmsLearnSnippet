@@ -52,11 +52,34 @@ let insertionSort = (array) => {
 };
 
 console.log(`array to be sorted`);
-let test__array = [5, 4, 3, 2, 1];
+let test__array = [20,19,18,17,16,15,14,13,12,10,9,8,7,6,5, 4, 3, 2, 1];
+
+
+
 
 console.table(test__array);
+
+let startTimeInsertion=new Date();
 console.table(insertionSort(test__array));
+
+let endTimeInsertion=new Date();
+let timeElapsedInsertion=endTimeInsertion-startTimeInsertion;
+
+console.log(`InsertionSort time ${1000*timeElapsedInsertion}`);
  console.log('bubble Sort test');
+
+let startTimeBubble=new Date();
  console.table(bubbleSort(test__array));
+
+let endTimeBubble=new Date();
+let timeElapsedBubble=endTimeBubble-startTimeBubble;
+
+console.log(`BubbleSort time ${1000*timeElapsedBubble}`);
  console.log('Selection Sort test');
+
+let startTimeSelection=new Date();
  console.table(selectionSort(test__array));
+
+let endTimeSelection=new Date();
+let timeElapsedSelection=endTimeSelection-startTimeSelection;
+console.log(`SelectionSort time ${1000*timeElapsedSelection}`);
