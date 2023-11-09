@@ -54,6 +54,17 @@ let insertionSort = (array) => {
 console.log(`array to be sorted`);
 let test__array = [20,19,18,17,16,15,14,13,12,10,9,8,7,6,5, 4, 3, 2, 1];
 
+const readline=require('readline');
+
+const rl=readline.createInterface({
+	input:process.stdin,
+	output:process.stdout
+});
+rl.question('What is your array',(answer)=>{
+	console.log(`Test123 ${answer}`);
+	rl.close();
+	
+});
 
 
 
