@@ -52,7 +52,7 @@ let insertionSort = (array) => {
 };
 
 console.log(`array to be sorted`);
-let test__array = [20,19,18,17,16,15,14,13,12,10,9,8,7,6,5, 4, 3, 2, 1];
+let test__array = [30,29,28,26,27,20,19,18,17,16,15,14,13,12,10,9,8,7,6,5, 4, 3, 2, 1];
 
 const readline=require('readline');
 
