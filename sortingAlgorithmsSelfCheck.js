@@ -51,47 +51,86 @@ let insertionSort = (array) => {
   return array;
 };
 
-console.log(`array to be sorted`);
-let test__array = [30,29,28,26,27,20,19,18,17,16,15,14,13,12,10,9,8,7,6,5, 4, 3, 2, 1];
-console.log(test__array.at(1));
-console.log(test__array.at(-1));
-const readline=require('readline');
+//console.log(`array to be sorted`);
+//let test__array = [30,29,28,26,27,20,19,18,17,16,15,14,13,12,10,9,8,7,6,5, 4, 3, 2, 1];
+//console.log(test__array.at(1));
+//console.log(test__array.at(-1));
+//const readline=require('readline');
+//
+//const rl=readline.createInterface({
+//	input:process.stdin,
+//	output:process.stdout
+//});
+//rl.question('What is your array',(answer)=>{
+//	console.log(`Test123 ${answer}`);
+//	rl.close();
+//	
+//});
 
-const rl=readline.createInterface({
-	input:process.stdin,
-	output:process.stdout
-});
-rl.question('What is your array',(answer)=>{
-	console.log(`Test123 ${answer}`);
-	rl.close();
+const biggestValueEqualToOccurence=(array)=>
+{
+	let valuesAsIndexesArray=[];
+	let indexofBiggestValue=0;
+	let biggestValue=array[0];
+	for (let i=0; i<array.length; i++)
+	{
+		if(typeof(valuesAsIndexesArray[array[i]])=='undefined')
+		{
+
+			valuesAsIndexesArray[array[i]]=0;
+		}
+			valuesAsIndexesArray[array[i]]++;
+			if (array[i]>biggestValue)
+			{
+				indexofBiggestValue=i;
+				biggestValue=array[i]
+			}
+		}
+	for (let i=0; i<valuesAsIndexesArray.length; i++)
+	{
+		if (valuesAsIndexesArray[i]===i)
+		{
+			console.log(`takie jest ${i}`);
+		}
+	}
+		
+
+		
+
+
+
 	
-});
+	
+	console.table(valuesAsIndexesArray);
+	console.log(biggestValue);
+	return biggestValue;
+}
 
+biggestValueEqualToOccurence([3,8,2,3,3,2]);
 
+//console.table(test__array);
 
-console.table(test__array);
-
-let startTimeInsertion=new Date();
-console.table(insertionSort(test__array));
-
-let endTimeInsertion=new Date();
-let timeElapsedInsertion=endTimeInsertion-startTimeInsertion;
-
-console.log(`InsertionSort time ${1000*timeElapsedInsertion}`);
- console.log('bubble Sort test');
-
-let startTimeBubble=new Date();
- console.table(bubbleSort(test__array));
-
-let endTimeBubble=new Date();
-let timeElapsedBubble=endTimeBubble-startTimeBubble;
-
-console.log(`BubbleSort time ${1000*timeElapsedBubble}`);
- console.log('Selection Sort test');
-
-let startTimeSelection=new Date();
- console.table(selectionSort(test__array));
-
-let endTimeSelection=new Date();
-let timeElapsedSelection=endTimeSelection-startTimeSelection;
-console.log(`SelectionSort time ${1000*timeElapsedSelection}`);
+//let startTimeInsertion=new Date();
+//console.table(insertionSort(test__array));
+//
+//let endTimeInsertion=new Date();
+//let timeElapsedInsertion=endTimeInsertion-startTimeInsertion;
+//
+//console.log(`InsertionSort time ${1000*timeElapsedInsertion}`);
+// console.log('bubble Sort test');
+//
+//let startTimeBubble=new Date();
+// console.table(bubbleSort(test__array));
+//
+//let endTimeBubble=new Date();
+//let timeElapsedBubble=endTimeBubble-startTimeBubble;
+//
+//console.log(`BubbleSort time ${1000*timeElapsedBubble}`);
+// console.log('Selection Sort test');
+//
+//let startTimeSelection=new Date();
+// console.table(selectionSort(test__array));
+//
+//let endTimeSelection=new Date();
+//let timeElapsedSelection=endTimeSelection-startTimeSelection;
+//console.log(`SelectionSort time ${1000*timeElapsedSelection}`);
