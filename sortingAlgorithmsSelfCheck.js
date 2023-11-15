@@ -80,17 +80,25 @@ const biggestValueEqualToOccurence=(array)=>
 			valuesAsIndexesArray[array[i]]=0;
 		}
 			valuesAsIndexesArray[array[i]]++;
-			if (array[i]>biggestValue)
-			{
-				indexofBiggestValue=i;
-				biggestValue=array[i]
-			}
 		}
 	for (let i=0; i<valuesAsIndexesArray.length; i++)
 	{
 		if (valuesAsIndexesArray[i]===i)
 		{
-			console.log(`takie jest ${i}`);
+			
+			biggestValue=valuesAsIndexesArray[i];
+
+//			console.log(`takie jest ${biggestValue}`);
+			if(valuesAsIndexesArray[i]<biggestValue)
+			{
+			biggestValue=valuesAsIndexesArray[i];
+			console.log(`takie jest ${biggestValue}`);
+			}
+			else 
+			{
+
+			console.log(`takie jest ${biggestValue}`);
+			}
 		}
 	}
 		
@@ -102,8 +110,6 @@ const biggestValueEqualToOccurence=(array)=>
 	
 	
 	console.table(valuesAsIndexesArray);
-	console.log(biggestValue);
-	return biggestValue;
 }
 
 biggestValueEqualToOccurence([3,8,2,3,3,2]);
