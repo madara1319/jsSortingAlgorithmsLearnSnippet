@@ -69,6 +69,7 @@ let insertionSort = (array) => {
 
 const biggestValueEqualToOccurence=(array)=>
 {
+	let resultsArray=[];
 	let valuesAsIndexesArray=[];
 	let indexofBiggestValue=0;
 	let biggestValue=array[0];
@@ -85,30 +86,28 @@ const biggestValueEqualToOccurence=(array)=>
 	{
 		if (valuesAsIndexesArray[i]===i)
 		{
+
+			resultsArray.push(i);
+			biggestValue=valuesAsIndexesArray[i];
 			
-			biggestValue=valuesAsIndexesArray[i];
-
-//			console.log(`takie jest ${biggestValue}`);
-			if(valuesAsIndexesArray[i]<biggestValue)
-			{
-			biggestValue=valuesAsIndexesArray[i];
-			console.log(`takie jest ${biggestValue}`);
-			}
-			else 
-			{
-
-			console.log(`takie jest ${biggestValue}`);
-			}
 		}
 	}
-		
+	for (let value of resultsArray)
+	{
+		biggestValue=value;
+		if(value>biggestValue)
+		{
+
+		biggestValue=value;
+		}
+	}
 
 		
 
 
 
-	
-	
+console.log(`Max value is ${biggestValue}`);	
+console.table(resultsArray);	
 	console.table(valuesAsIndexesArray);
 }
 
