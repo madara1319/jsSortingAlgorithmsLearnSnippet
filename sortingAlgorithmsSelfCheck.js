@@ -106,12 +106,41 @@ const biggestValueEqualToOccurence=(array)=>
 
 
 
-console.log(`Max value is ${biggestValue}`);	
-console.table(resultsArray);	
-	console.table(valuesAsIndexesArray);
+	return biggestValue;
 }
 
-biggestValueEqualToOccurence([3,8,2,3,3,2]);
+console.log(biggestValueEqualToOccurence([3,8,2,3,3,2]));
+
+
+const diverseWordBuilder=()=>(numberOfA, numberOfB, numberOfC)
+{
+	let builtWord;
+	const letterA='a';
+	const letterB='b';
+	const letterC='c';
+	let numberOfA=1;
+	let numberOfB=2;
+	let numberOfC=3;
+	const wordLength=numberOfA+numberOfB+numberOfC;
+	counterOfA=numberOfA;
+	counterOfB=numberOfB;
+	counterOfC=numberOfC;
+	console.log(`mam ${numberOfA} sztuk A,${numberOfB} sztuk B oraz ${numberOfC} sztuk C `);
+	while(counterOfA||counterOfB||counterOfC)
+	{
+		for (let i=0; i<wordLength;i++)
+		{
+			if(i>=2)
+			{
+				if(builtWord.charAt(i-1)==letterA && buildWord.charAt(i-2)==letterA)
+				{
+					builtWord.concat(letterB);
+				}
+			}
+		}
+	}
+}
+
 
 //console.table(test__array);
 
