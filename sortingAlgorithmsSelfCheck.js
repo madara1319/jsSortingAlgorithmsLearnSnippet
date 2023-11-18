@@ -142,6 +142,18 @@ const diverseWordBuilder=()=>(numberOfA, numberOfB, numberOfC)
 }
 
 
+let mergeArray=(array1,array2)=>
+{
+  let newArray=[];
+  let array_1_pointer=0;
+  let array_2_pointer=0;
+  while (array_1_pointer<array1.length || array_2_pointer<array2.length)
+  {
+    if (!array_1[array_1_pointer])
+    {}
+  }
+}
+
 //console.table(test__array);
 
 //let startTimeInsertion=new Date();
