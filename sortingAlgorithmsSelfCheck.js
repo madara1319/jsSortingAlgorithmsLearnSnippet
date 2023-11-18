@@ -112,34 +112,34 @@ const biggestValueEqualToOccurence=(array)=>
 console.log(biggestValueEqualToOccurence([3,8,2,3,3,2]));
 
 
-const diverseWordBuilder=()=>(numberOfA, numberOfB, numberOfC)
-{
-	let builtWord;
-	const letterA='a';
-	const letterB='b';
-	const letterC='c';
-	let numberOfA=1;
-	let numberOfB=2;
-	let numberOfC=3;
-	const wordLength=numberOfA+numberOfB+numberOfC;
-	counterOfA=numberOfA;
-	counterOfB=numberOfB;
-	counterOfC=numberOfC;
-	console.log(`mam ${numberOfA} sztuk A,${numberOfB} sztuk B oraz ${numberOfC} sztuk C `);
-	while(counterOfA||counterOfB||counterOfC)
-	{
-		for (let i=0; i<wordLength;i++)
-		{
-			if(i>=2)
-			{
-				if(builtWord.charAt(i-1)==letterA && buildWord.charAt(i-2)==letterA)
-				{
-					builtWord.concat(letterB);
-				}
-			}
-		}
-	}
-}
+//const diverseWordBuilder=()=>(numberOfA, numberOfB, numberOfC)
+//{
+//	let builtWord;
+//	const letterA='a';
+//	const letterB='b';
+//	const letterC='c';
+//	let numberOfA=1;
+//	let numberOfB=2;
+//	let numberOfC=3;
+//	const wordLength=numberOfA+numberOfB+numberOfC;
+//	counterOfA=numberOfA;
+//	counterOfB=numberOfB;
+//	counterOfC=numberOfC;
+//	console.log(`mam ${numberOfA} sztuk A,${numberOfB} sztuk B oraz ${numberOfC} sztuk C `);
+//	while(counterOfA||counterOfB||counterOfC)
+//	{
+//		for (let i=0; i<wordLength;i++)
+//		{
+//			if(i>=2)
+//			{
+//				if(builtWord.charAt(i-1)==letterA && buildWord.charAt(i-2)==letterA)
+//				{
+//					builtWord.concat(letterB);
+//				}
+//			}
+//		}
+//	}
+//}
 
 
 let mergeArray=(array1,array2)=>
@@ -149,11 +149,31 @@ let mergeArray=(array1,array2)=>
   let array_2_pointer=0;
   while (array_1_pointer<array1.length || array_2_pointer<array2.length)
   {
-    if (!array_1[array_1_pointer])
-    {}
+    if (!array1[array_1_pointer])
+    {
+      newArray.push(array2[array_2_pointer]);
+      array_2_pointer++;
+    }
+    else if (!array2[array_2_pointer])
+    {
+      newArray.push(array1[array_1_pointer]);
+      array_1_pointer++;
+    }
+    else if (array1[array_1_pointer]<array2[array_2_pointer])
+    {
+      newArray.push(array1[array_1_pointer]);
+      array_1_pointer++;
+    }
+    else
+    {
+      newArray.push(array2[array_2_pointer]);
+      array_2_pointer++;
+    }
   }
+  return newArray;
 }
 
+console.log(`Merge 2 posortowanych tablic [100,101,123,256] i [1,12,35,46,59,69,99] wynosi mergeArray ${mergeArray([100,101,123,256],[1,12,35,46,59,69,99])}`) ;
 //console.table(test__array);
 
 //let startTimeInsertion=new Date();
