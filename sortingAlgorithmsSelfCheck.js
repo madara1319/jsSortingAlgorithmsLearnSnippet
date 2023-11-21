@@ -109,7 +109,7 @@ const biggestValueEqualToOccurence=(array)=>
 	return biggestValue;
 }
 
-console.log(biggestValueEqualToOccurence([3,8,2,3,3,2]));
+//console.log(biggestValueEqualToOccurence([3,8,2,3,3,2]));
 
 
 //const diverseWordBuilder=()=>(numberOfA, numberOfB, numberOfC)
@@ -150,7 +150,7 @@ let mergeArray=(array1,array2)=>
   while (array_1_pointer<array1.length || array_2_pointer<array2.length)
   {
     /*boundary for all element this will be false and inside wont be executed
-    if array_1_pointer will equal lenght which exceeds the array values so its zero 
+    if array_1_pointer will equal length which exceeds the array values so its zero 
     the negation of this will give true and we will go into this inside
     and execute this as if array 1 values ended and we have to push array 2 elements
     also increment array_2_pointer the same does second else if as if we finished array 2
@@ -184,7 +184,32 @@ let mergeArray=(array1,array2)=>
   return newArray;
 }
 
-console.log(`Merge 2 posortowanych tablic [100,101,123,256] i [1,12,35,46,59,69,99] wynosi mergeArray ${mergeArray([100,101,123,256],[1,12,35,46,59,69,99])}`) ;
+let findNeedle=(needle,haystack)=>
+{
+  needleStartIndex=0;
+  while (needleStartIndex<=haystack.length-needle.length)
+  {
+    if (needle[0]==haystack[needleStartIndex])
+    {
+      let needleOffset=0;
+      while (needleOffset<needle.length)
+      {
+        if (needle[needleOffset]!=haystack[needleStartIndex+needleOffset])
+          break;
+        else
+        {
+          if (needleOffset===needle.length-1)
+            return true;
+        }
+        needleOffset+=1;
+      }
+    }
+    needleStartIndex+=1;
+  }
+  return false;
+}
+console.log(findNeedle("def","abcdefghi"));
+//console.log(`Merge 2 posortowanych tablic [100,101,123,256] i [1,12,35,46,59,69,99] wynosi mergeArray ${mergeArray([100,101,123,256],[1,12,35,46,59,69,99])}`) ;
 //console.table(test__array);
 
 //let startTimeInsertion=new Date();
