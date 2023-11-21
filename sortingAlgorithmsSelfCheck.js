@@ -187,6 +187,11 @@ let mergeArray=(array1,array2)=>
 let findNeedle=(needle,haystack)=>
 {
   needleStartIndex=0;
+  /*
+  if needleStartIndex starts on the difference between these lenghts
+  it will end on the haystack end which will mean needle was moved max
+  to the right
+    */
   while (needleStartIndex<=haystack.length-needle.length)
   {
     if (needle[0]==haystack[needleStartIndex])
