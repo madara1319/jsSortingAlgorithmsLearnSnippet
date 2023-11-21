@@ -149,6 +149,13 @@ let mergeArray=(array1,array2)=>
   let array_2_pointer=0;
   while (array_1_pointer<array1.length || array_2_pointer<array2.length)
   {
+    /*boundary for all element this will be false and inside wont be executed
+    if array_1_pointer will equal lenght which exceeds the array values so its zero 
+    the negation of this will give true and we will go into this inside
+    and execute this as if array 1 values ended and we have to push array 2 elements
+    also increment array_2_pointer the same does second else if as if we finished array 2
+    
+      */
     if (!array1[array_1_pointer])
     {
       newArray.push(array2[array_2_pointer]);
@@ -159,6 +166,10 @@ let mergeArray=(array1,array2)=>
       newArray.push(array1[array_1_pointer]);
       array_1_pointer++;
     }
+    /*This if and else are main steps through elements element from one array is larger we push lower element 
+    to the final array and else does the same 
+
+      */
     else if (array1[array_1_pointer]<array2[array_2_pointer])
     {
       newArray.push(array1[array_1_pointer]);
