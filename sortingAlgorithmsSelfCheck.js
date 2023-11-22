@@ -194,11 +194,23 @@ let findNeedle=(needle,haystack)=>
     */
   while (needleStartIndex<=haystack.length-needle.length)
   {
+    /*
+    If first character of needle is the same in haystack we enter loop and check 
+    the following characters if they also gonna match 
+      */
     if (needle[0]==haystack[needleStartIndex])
     {
+      /*
+        offset is for iterating over next characters in needle
+        */
       let needleOffset=0;
       while (needleOffset<needle.length)
       {
+        /*
+        if following characters dont match we break from loop. If all characters matched 
+        offset will be the lenght of needle -1 because last index incerement 1 lower
+
+          */
         if (needle[needleOffset]!=haystack[needleStartIndex+needleOffset])
           break;
         else
@@ -206,14 +218,61 @@ let findNeedle=(needle,haystack)=>
           if (needleOffset===needle.length-1)
             return true;
         }
+        /*
+        we increment offset as we move forward with matching characters
+          */
         needleOffset+=1;
       }
+      /*
+      If we dont get matching first character we need to move forward haystack
+      and increment startingIndex
+        */
     }
     needleStartIndex+=1;
   }
+  /*
+  If we dont find out string in main string it returns false
+    */
   return false;
 }
-console.log(findNeedle("def","abcdefghi"));
+
+function largestProduct(array){
+  let largestProductSoFar=array[0]*array[1]*array[2];
+  let i=0;
+  let overallICounter=0;
+  let overallJCounter=0;
+  let overallKCounter=0;
+  while (i<array.length)
+  {
+
+  overallICounter+=1
+
+    let j=i+1;
+    console.log(`To jest krok i = ${i}`);
+    while(j<array.length)
+    {
+      overallJCounter+=1;
+    console.log(`To jest krok j = ${j}`);
+      let k=j+1;
+      while(k<array.length)
+      {
+      overallKCounter+=1;
+    console.log(`To jest krok k = ${k}`);
+        if(array[i]*array[j]*array[k]>largestProductSoFar)
+          largestProductSoFar=array[i]*array[j]*array[k];
+        console.log(`largestProductSoFar wynosi => ${largestProductSoFar}`);
+      k+=1;
+      }
+    j+=1;
+    }
+  i+=1;
+  }
+  console.log(`overallICounter equals ${overallICounter} overallJCounter equals ${overallJCounter} overallKCounter equals ${overallKCounter}`);
+  return largestProductSoFar;
+
+}
+console.log(largestProduct([1,2,3,4,5,6,7,8]));
+//console.log(findNeedle("def","abcdefghi"));
 //console.log(`Merge 2 posortowanych tablic [100,101,123,256] i [1,12,35,46,59,69,99] wynosi mergeArray ${mergeArray([100,101,123,256],[1,12,35,46,59,69,99])}`) ;
 //console.table(test__array);
 
