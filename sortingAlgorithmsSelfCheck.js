@@ -235,7 +235,9 @@ let findNeedle=(needle,haystack)=>
     */
   return false;
 }
-
+/*I sure understand that its O(N^3) but that innermost loop would run N/4 times
+as the book says im not so sure but whatever
+  */
 function largestProduct(array){
   let largestProductSoFar=array[0]*array[1]*array[2];
   let i=0;
@@ -271,7 +273,7 @@ function largestProduct(array){
   return largestProductSoFar;
 
 }
-console.log(largestProduct([1,2,3,4,5,6,7,8]));
+console.log(largestProduct([1,2,3,4,5]));
 //console.log(findNeedle("def","abcdefghi"));
 //console.log(`Merge 2 posortowanych tablic [100,101,123,256] i [1,12,35,46,59,69,99] wynosi mergeArray ${mergeArray([100,101,123,256],[1,12,35,46,59,69,99])}`) ;
 //console.table(test__array);
