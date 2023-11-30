@@ -273,7 +273,54 @@ function largestProduct(array){
   return largestProductSoFar;
 
 }
-console.log(largestProduct([1,2,3,4,5]));
+//console.log(largestProduct([1,2,3,4,5]));
+
+//write a function that returns the intersections of two arrays [1,2,3,4,5] 
+//[0,2,4,5,8] result [2,4]
+
+function intersectionOfArrays(array1,array2)
+{
+  let largerArray;
+  let smallerArray;
+  let hashTable={};
+  let interSection=[];
+//not sure if size domination matters in this case
+  if(array1.length>array2.length)
+  {
+    largerArray=array1;
+    smallerArray=array2;
+}
+  else
+{
+  largerArray=array2;
+  smallerArray=array1;
+}
+for (const value of largerArray)
+{
+  hashTable[value]=true;
+}
+console.table(hashTable);
+for (const value of smallerArray)
+{
+  if (!hashTable[value] || hashTable===undefined)
+  {
+    console.log("chuj");
+    //return false;
+  }
+  else{
+
+interSection.push(value)
+  }
+}
+console.table(interSection);
+return true;
+
+}
+
+console.log(intersectionOfArrays([1,2,3,4,5],[0,2,4,5,6,8]));
+
+//console.log(intersectionOfArrays(["a","b","c","d","e","f"],["b","d","f"]));
+
 //console.log(findNeedle("def","abcdefghi"));
 //console.log(`Merge 2 posortowanych tablic [100,101,123,256] i [1,12,35,46,59,69,99] wynosi mergeArray ${mergeArray([100,101,123,256],[1,12,35,46,59,69,99])}`) ;
 //console.table(test__array);
