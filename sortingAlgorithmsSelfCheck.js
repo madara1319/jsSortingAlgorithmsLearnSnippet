@@ -299,12 +299,12 @@ for (const value of largerArray)
 {
   hashTable[value]=true;
 }
-console.table(hashTable);
+//console.table(hashTable);
 for (const value of smallerArray)
 {
   if (!hashTable[value] || hashTable===undefined)
   {
-    console.log("chuj");
+    //console.log("chuj");
     //return false;
   }
   else{
@@ -312,12 +312,27 @@ for (const value of smallerArray)
 interSection.push(value)
   }
 }
-console.table(interSection);
-return true;
-
+//console.table(interSection);
+return interSection;
 }
 
-console.log(intersectionOfArrays([1,2,3,4,5],[0,2,4,5,6,8]));
+function findDuplicatesInString(arrayOfStrings){
+  let hashTable={};
+  for (const element of arrayOfStrings)
+  {
+    if (hashTable[element])
+    {
+      console.log("Yoo first duplicate: " + element);
+      return hashTable;
+    }
+    else{
+
+    hashTable[element]=true;
+    }
+  }
+}
+console.log(findDuplicatesInString(["a","b","c","d","e","f","c","g","h","i","d"]));
+//console.log(intersectionOfArrays([1,2,3,4,5],[0,2,4,5,6,8]));
 
 //console.log(intersectionOfArrays(["a","b","c","d","e","f"],["b","d","f"]));
 
