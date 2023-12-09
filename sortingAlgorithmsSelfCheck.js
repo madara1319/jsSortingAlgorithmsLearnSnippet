@@ -331,7 +331,32 @@ function findDuplicatesInString(arrayOfStrings){
     }
   }
 }
-console.log(findDuplicatesInString(["a","b","c","d","e","f","c","g","h","i","d"]));
+
+function findMissingAlphabetLetter(inputString)
+{
+  let alphabet={};
+  const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+  alphabet = alpha.map((x) => String.fromCharCode(x));
+
+  const alphabetMap={};
+  let testRegex=/[a-z]/gi;
+  let test=inputString.match(testRegex);
+  for (const letter of alphabet)
+  {
+    if(true)
+    {
+      return alphabetMap;
+    }
+    else
+    {
+      alphabetMap[letter]=true;
+    }
+  }
+}
+
+
+console.log(findMissingAlphabetLetter("the quick brown box jumps over a lazy dog"))
+//console.log(findDuplicatesInString(["a","b","c","d","e","f","c","g","h","i","d"]));
 //console.log(intersectionOfArrays([1,2,3,4,5],[0,2,4,5,6,8]));
 
 //console.log(intersectionOfArrays(["a","b","c","d","e","f"],["b","d","f"]));
