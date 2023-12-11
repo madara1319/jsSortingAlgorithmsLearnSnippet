@@ -343,7 +343,7 @@ function findMissingAlphabetLetter(inputString)
   let test=inputString.match(testRegex);
   for (const letter of alphabet)
   {
-    if(alphabet.match(test))
+    if(alphabet[test])
     {
       console.log("test");
     }
