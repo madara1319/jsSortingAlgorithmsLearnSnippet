@@ -352,6 +352,7 @@ function findMissingAlphabetLetter(inputString)
       alphabetMap[letter]=true;
     }
   }
+  return alphabetMap;
 }
 
 
