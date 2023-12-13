@@ -360,8 +360,32 @@ function findMissingAlphabetLetter(inputString)
   }
 }
 
+function findFirstNonDuplicatedCharactersInAString(inputString)
+{
+  const charactersMap={};
+  const lettersRegex=/[a-z]/gi;
+  const charactersFromInputString=inputString.match(lettersRegex);
+  for (const character of charactersFromInputString)
+  {
+    if(charactersMap[character])
+    {
+      charactersMap[character]+=1;
+    }
+    else if(charactersMap[character]==undefined){
+      charactersMap[character]=1;
+    }
+  }
+for(const letter in charactersMap)
+{
+  if (charactersMap[letter]==1)
+  {
+    return letter;
+  }
+}
+}
+console.log(findFirstNonDuplicatedCharactersInAString("minimum"));
 
-console.log(findMissingAlphabetLetter("the quick brown box jumps over a lazy dog"))
+//console.log(findMissingAlphabetLetter("the quick brown box jumps over a lazy dog"))
 //console.log(findDuplicatesInString(["a","b","c","d","e","f","c","g","h","i","d"]));
 //console.log(intersectionOfArrays([1,2,3,4,5],[0,2,4,5,6,8]));
 
