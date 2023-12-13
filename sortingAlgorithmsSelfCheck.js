@@ -334,25 +334,30 @@ function findDuplicatesInString(arrayOfStrings){
 
 function findMissingAlphabetLetter(inputString)
 {
+  //part for creating alphabet map structure with false in letter values
   let alphabet={};
   const alpha = Array.from(Array(26)).map((e, i) => i + 65);
-  alphabet = alpha.map((x) => String.fromCharCode(x));
-
+  alphabet = alpha.map((x) => String.fromCharCode(x).toLowerCase());
   const alphabetMap={};
-  let testRegex=/[a-z]/gi;
-  let test=inputString.match(testRegex);
   for (const letter of alphabet)
   {
-    if(alphabet[test])
-    {
-      console.log("test");
-    }
-    else
-    {
+      alphabetMap[letter]=false;
+  }
+  //put letters from string as true in alphabetMap 
+  let lettersRegex=/[a-z]/g;
+  let charactersFromInputString=inputString.match(lettersRegex);
+  for(const letter of charactersFromInputString)
+  {
       alphabetMap[letter]=true;
+  }
+  //find missing alphabet letters
+  for (const letter in alphabetMap)
+  {
+    if(!alphabetMap[letter])
+    {
+      return letter;
     }
   }
-  return alphabetMap;
 }
 
 
