@@ -404,18 +404,79 @@ class Stack
 
 }
 
-const testStack=new Stack();
-testStack.push(2);
-testStack.push(5);
-testStack.push(125122);
-testStack.push(12);
 
+class Linter
+{
+  constructor()
+  {
+    this.stack=new Stack();
+  }
+  lint(text)
+  {
+    text.split("").forEach((element)=>{
+      if (this.#is_opening_brace(element))
+      {
+        this.stack.push(element);
+      }
+      else if (this.#is_closing_brace(element))
+      {
+        //pop from stack
+        const popped_opening_brace=this.stack.pop();
+      
+      //if the stack was empty so what we popped was nil it means an opening brace is missing
+      if (!popped_opening_brace)
+      {
+        return `${element} doest have opening brace`
+      }
+      //if popped opening brace doesnt match the current closing brace we produce an error
+      if (this.#is_not_a_match(popped_opening_brace,element))
+      {
+        return `${element} has mismatched opening brace`
+      }
+      }
+    })
+    if (this.stack.read)
+    {
+      return `${this.stack.read} does not have closing brace`
+    }
+    //console.log("true");
+    return true;
+  }
+  #is_opening_brace(element)
+  {
+    return ["(","[","{"].includes(element);
+  }
+  #is_closing_brace(element)
+  {
+    return [")","]","}"].includes(element);
+  }
+  #is_not_a_match(openingBrace,closingBrace)
+  {
+    const closingBraceMap={
+      "(":")",
+      "[":"]",
+      "{":"}"
+    };
+    return closingBrace!==closingBraceMap[openingBrace];
+  }
+}
+const linter= new Linter();
+//linter.lint(" ( var x = { y: [ 1 , 2 , 3 ] } )");
 
+linter.lint("  var x = { y: [ 1 , 2 , 3 ] } )");
 
-console.log(testStack.read);
-testStack.pop();
-
-console.log(testStack.read);
+//const testStack=new Stack();
+//testStack.push(2);
+//testStack.push(5);
+//testStack.push(125122);
+//testStack.push(12);
+//
+//
+//
+//console.log(testStack.read);
+//testStack.pop();
+//
+//console.log(testStack.read);
 //console.log(findFirstNonDuplicatedCharactersInAString("minimum"));
 
 //console.log(findMissingAlphabetLetter("the quick brown box jumps over a lazy dog"))
