@@ -383,7 +383,40 @@ for(const letter in charactersMap)
   }
 }
 }
-console.log(findFirstNonDuplicatedCharactersInAString("minimum"));
+
+class Stack
+{
+  constructor(){
+    this.data=[];
+  }
+  push(element)
+  {
+    this.data.push(element);
+  }
+  pop()
+  {
+    this.data.pop();
+  }
+  get read()
+  {
+    return this.data.slice(-1)[0];
+  }
+
+}
+
+const testStack=new Stack();
+testStack.push(2);
+testStack.push(5);
+testStack.push(125122);
+testStack.push(12);
+
+
+
+console.log(testStack.read);
+testStack.pop();
+
+console.log(testStack.read);
+//console.log(findFirstNonDuplicatedCharactersInAString("minimum"));
 
 //console.log(findMissingAlphabetLetter("the quick brown box jumps over a lazy dog"))
 //console.log(findDuplicatesInString(["a","b","c","d","e","f","c","g","h","i","d"]));
