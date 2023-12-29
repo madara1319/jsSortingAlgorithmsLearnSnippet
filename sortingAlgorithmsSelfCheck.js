@@ -395,7 +395,7 @@ class Stack
   }
   pop()
   {
-    this.data.pop();
+    return this.data.pop();
   }
   get read()
   {
@@ -424,23 +424,26 @@ class Linter
         const popped_opening_brace=this.stack.pop();
       
       //if the stack was empty so what we popped was nil it means an opening brace is missing
-      if (!popped_opening_brace)
-      {
-        return `${element} doest have opening brace`
-      }
+        if (!popped_opening_brace)
+        {
+          console.log(`${element} doest have opening brace`);
+          return 0 
+        }
       //if popped opening brace doesnt match the current closing brace we produce an error
-      if (this.#is_not_a_match(popped_opening_brace,element))
-      {
-        return `${element} has mismatched opening brace`
-      }
+        else if (this.#is_not_a_match(popped_opening_brace,element))
+        {
+          console.log(`${element} has mismatched opening brace`)
+          return 0 
+        }
       }
     })
     if (this.stack.read)
     {
-      return `${this.stack.read} does not have closing brace`
+      console.log(`${this.stack.read} does not have closing brace`);
+      return 0 
     }
     //console.log("true");
-    return true;
+    return 1
   }
   #is_opening_brace(element)
   {
@@ -463,7 +466,7 @@ class Linter
 const linter= new Linter();
 //linter.lint(" ( var x = { y: [ 1 , 2 , 3 ] } )");
 
-linter.lint("  var x = { y: [ 1 , 2 , 3 ] } )");
+linter.lint("([  var x = { y: [ 1 , 2 , 3 ] } )");
 
 //const testStack=new Stack();
 //testStack.push(2);
