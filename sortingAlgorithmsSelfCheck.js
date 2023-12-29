@@ -582,7 +582,7 @@ function findDirectories(directory)
 
 }
 
-function sum(low,high)
+function sumNumbersBetweenTwoValues(low,high)
 {
   if (low==high)
   {
@@ -593,7 +593,8 @@ function sum(low,high)
   return (high + sum(low,high-1));
 }
 
-console.log(sum(1,10));
+console.log(sumNumbersBetweenTwoValues(1,10));
+
 
 //findOneLevelDirectories('C:/dev/');
 
