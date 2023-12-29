@@ -582,12 +582,23 @@ function findDirectories(directory)
 
 }
 
+function sum(low,high)
+{
+  if (low==high)
+  {
+   // console.log(low);
+    return low;
+  }
+ //console.log( high + sum(low,high-1));
+  return (high + sum(low,high-1));
+}
 
+console.log(sum(1,10));
 
 //findOneLevelDirectories('C:/dev/');
 
 //findTwoLevelDirectories('C:/dev/');
-findDirectories('C:/dev/');
+//findDirectories('C:/dev/');
 
 
 //console.log(reverseAString("!dlroWolleH"));
