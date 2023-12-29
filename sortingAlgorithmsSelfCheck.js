@@ -532,7 +532,21 @@ function reverseAString(string)
   return newString;
 }
 
-console.log(reverseAString("!dlroWolleH"));
+const fs=require('fs');
+const path=require('path');
+function findDirectories(directory)
+{
+  fs.readdirSync(directory).forEach((filename)=>{
+    const filePath=path.join(directory,filename);
+    if(fs.statSync(filePath).isDirectory() && filename!=="." && filename!==".."){
+      console.log(filePath);
+    }
+  });
+}
+
+findDirectories('C:/dev');
+
+//console.log(reverseAString("!dlroWolleH"));
 
 //print_manager=new PrintManager();
 //print_manager.queuePrintJob("First Document");
