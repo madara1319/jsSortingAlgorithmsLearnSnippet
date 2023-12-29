@@ -471,11 +471,11 @@ class Queue
   constructor(){
     this.data=[];
   }
-  push(element)
+  enqueue(element)
   {
     this.data.push(element);
   }
-  pop()
+  dequeue()
   {
     return this.data.shift();
   }
@@ -500,9 +500,9 @@ class PrintManager
   run()
   {
     //each time this loop runs we read the document ath the front of the queue
-    while this.queue.read
+    while (this.queue.read)
     {
-      this.#print(queue.dequeue);
+      this.#print(this.queue.dequeue());
 
     }
 
@@ -517,8 +517,12 @@ class PrintManager
 
 print_manager=new PrintManager();
 print_manager.queuePrintJob("First Document");
-print_manager=queuePrintJob("Second Document");
-print_manager=queuePrintJob("Third Document");
+print_manager.queuePrintJob("Second Document");
+print_manager.queuePrintJob("Third Document");
+print_manager.run();
+print_manager.queuePrintJob("Document26");
+
+print_manager.queuePrintJob("Document56");
 print_manager.run();
 
 
