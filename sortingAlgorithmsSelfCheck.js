@@ -532,20 +532,47 @@ function reverseAString(string)
   return newString;
 }
 
+
+//import filesystem module & path module
 const fs=require('fs');
 const path=require('path');
-function findDirectories(directory)
+function findOneLevelDirectories(directory)
 {
   fs.readdirSync(directory).forEach((filename)=>{
     const filePath=path.join(directory,filename);
     if(fs.statSync(filePath).isDirectory() && filename!=="." && filename!==".."){
       console.log(filePath);
+
     }
   });
+
 }
 
-findDirectories('C:/dev');
 
+function findTwoLevelDirectories(directory)
+{
+  fs.readdirSync(directory).forEach((filename)=>{
+    const filePath=path.join(directory,filename);
+
+    if(fs.statSync(filePath).isDirectory() && filename!=="." && filename!==".."){
+      console.log(filePath);
+
+      fs.readdirSync(path.join(directory,filename)).forEach((innerFilename)=>{
+        const innerFilePath=path.join(directory,filename,innerFilename);
+        if (fs.statSync(innerFilePath).isDirectory() && innerFilename !== "." && innerFilename !==".."){
+          console.log(innerFilePath);
+        }
+      });
+
+    }
+  });
+
+}
+
+
+findOneLevelDirectories('C:/Program Files/');
+
+findTwoLevelDirectories('C:/Program Files/');
 //console.log(reverseAString("!dlroWolleH"));
 
 //print_manager=new PrintManager();
