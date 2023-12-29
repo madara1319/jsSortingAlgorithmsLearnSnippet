@@ -515,15 +515,34 @@ class PrintManager
 }
 
 
-print_manager=new PrintManager();
-print_manager.queuePrintJob("First Document");
-print_manager.queuePrintJob("Second Document");
-print_manager.queuePrintJob("Third Document");
-print_manager.run();
-print_manager.queuePrintJob("Document26");
+function reverseAString(string)
+{
+  let newString=""; 
+  const stackString=new Stack();
+  string.split("").forEach((element)=>{
+    
+    stackString.push(element);
 
-print_manager.queuePrintJob("Document56");
-print_manager.run();
+  })
+
+  while(stackString.read)
+  {
+    newString+=`${stackString.pop()}`;
+  }
+  return newString;
+}
+
+console.log(reverseAString("!dlroWolleH"));
+
+//print_manager=new PrintManager();
+//print_manager.queuePrintJob("First Document");
+//print_manager.queuePrintJob("Second Document");
+//print_manager.queuePrintJob("Third Document");
+//print_manager.run();
+//print_manager.queuePrintJob("Document26");
+//
+//print_manager.queuePrintJob("Document56");
+//print_manager.run();
 
 
 //const testQueue=new Queue();
