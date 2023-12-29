@@ -463,10 +463,46 @@ class Linter
     return closingBrace!==closingBraceMap[openingBrace];
   }
 }
-const linter= new Linter();
+
+
+
+class Queue 
+{
+  constructor(){
+    this.data=[];
+  }
+  push(element)
+  {
+    this.data.push(element);
+  }
+  pop()
+  {
+    return this.data.shift();
+  }
+  get read()
+  {
+    return this.data.slice(0,1)[0];
+  }
+
+}
+const testQueue=new Queue();
+testQueue.push(1);
+testQueue.push(2);
+testQueue.push(3);
+testQueue.push(4);
+testQueue.push(5);
+console.log(testQueue.read);
+console.log(testQueue.pop());
+
+console.log(testQueue.read);
+console.log(testQueue.pop());
+
+console.log(testQueue.read);
+console.log(testQueue.pop());
+//const linter= new Linter();
 //linter.lint(" ( var x = { y: [ 1 , 2 , 3 ] } )");
 
-linter.lint("([  var x = { y: [ 1 , 2 , 3 ] } )");
+//linter.lint("([  var x = { y: [ 1 , 2 , 3 ] } )");
 
 //const testStack=new Stack();
 //testStack.push(2);
