@@ -485,20 +485,57 @@ class Queue
   }
 
 }
-const testQueue=new Queue();
-testQueue.push(1);
-testQueue.push(2);
-testQueue.push(3);
-testQueue.push(4);
-testQueue.push(5);
-console.log(testQueue.read);
-console.log(testQueue.pop());
 
-console.log(testQueue.read);
-console.log(testQueue.pop());
 
-console.log(testQueue.read);
-console.log(testQueue.pop());
+class PrintManager 
+{
+  constructor()
+  {
+    this.queue=new Queue();
+  }
+  queuePrintJob(document)
+  {
+    this.queue.enqueue(document);
+  }
+  run()
+  {
+    //each time this loop runs we read the document ath the front of the queue
+    while this.queue.read
+    {
+      this.#print(queue.dequeue);
+
+    }
+
+  }
+  #print(document)
+  {
+    //code to run the actual printer would go here
+    console.log(document);
+  }
+}
+
+
+print_manager=new PrintManager();
+print_manager.queuePrintJob("First Document");
+print_manager=queuePrintJob("Second Document");
+print_manager=queuePrintJob("Third Document");
+print_manager.run();
+
+
+//const testQueue=new Queue();
+//testQueue.push(1);
+//testQueue.push(2);
+//testQueue.push(3);
+//testQueue.push(4);
+//testQueue.push(5);
+//console.log(testQueue.read);
+//console.log(testQueue.pop());
+//
+//console.log(testQueue.read);
+//console.log(testQueue.pop());
+//
+//console.log(testQueue.read);
+//console.log(testQueue.pop());
 //const linter= new Linter();
 //linter.lint(" ( var x = { y: [ 1 , 2 , 3 ] } )");
 
