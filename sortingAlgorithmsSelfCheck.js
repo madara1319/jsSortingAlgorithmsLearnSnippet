@@ -570,9 +570,26 @@ function findTwoLevelDirectories(directory)
 }
 
 
-findOneLevelDirectories('C:/Program Files/');
+function findDirectories(directory)
+{
+  fs.readdirSync(directory).forEach((filename)=>{
+    const filePath=path.join(directory,filename);
+    if(fs.statSync(filePath).isDirectory() && filename!=="." && filename!==".."){
+      console.log(filePath);
+      findDirectories(filePath);
+    }
+  });
 
-findTwoLevelDirectories('C:/Program Files/');
+}
+
+
+
+//findOneLevelDirectories('C:/dev/');
+
+//findTwoLevelDirectories('C:/dev/');
+findDirectories('C:/dev/');
+
+
 //console.log(reverseAString("!dlroWolleH"));
 
 //print_manager=new PrintManager();
