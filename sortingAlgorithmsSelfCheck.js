@@ -593,7 +593,50 @@ function sumNumbersBetweenTwoValues(low,high)
   return (high + sum(low,high-1));
 }
 
-console.log(sumNumbersBetweenTwoValues(1,10));
+
+function printNestedArrayContents(array)
+{
+  for (const element of array)
+  {
+    if (Number.isInteger(element))
+    {
+      console.log(element);
+    }
+    else
+    {
+
+      printNestedArrayContents(element);
+    }
+  }
+}
+
+
+taskArray=[1,
+  2,
+  3,
+  [4,5,6],
+  7,
+  [8,
+    [9,10,11,
+      [12,13,14]
+    ]
+  ],
+  [15,16,17,18,19,
+    [20,21,22,
+      [23,24,25,
+      [26,27,29]
+      ],30,31
+    ],32
+  ],33
+];
+
+
+//console.table(taskArray);
+
+printNestedArrayContents(taskArray);
+
+
+//console.log(sumNumbersBetweenTwoValues(1,10));
 
 
 //findOneLevelDirectories('C:/dev/');
