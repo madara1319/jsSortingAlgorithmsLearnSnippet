@@ -631,10 +631,13 @@ taskArray=[1,
 ];
 
 
+taskArray2=[1,2,3,[12,15,[2,[123,[345],125,[125,346],226],1156],34643],12515,34643,[125,124,[44,12],235],33];
+
 //console.table(taskArray);
 
-printNestedArrayContents(taskArray);
+//printNestedArrayContents(taskArray);
 
+printNestedArrayContents(taskArray2);
 
 //console.log(sumNumbersBetweenTwoValues(1,10));
 
