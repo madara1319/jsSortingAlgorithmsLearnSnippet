@@ -600,11 +600,13 @@ function printNestedArrayContents(array)
   {
     if (Number.isInteger(element))
     {
+      
+      //basecase element of array is number
       console.log(element);
     }
     else
     {
-
+      
       printNestedArrayContents(element);
     }
   }
