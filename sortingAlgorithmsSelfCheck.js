@@ -613,33 +613,48 @@ function printNestedArrayContents(array)
 }
 
 
-taskArray=[1,
-  2,
-  3,
-  [4,5,6],
-  7,
-  [8,
-    [9,10,11,
-      [12,13,14]
-    ]
-  ],
-  [15,16,17,18,19,
-    [20,21,22,
-      [23,24,25,
-      [26,27,29]
-      ],30,31
-    ],32
-  ],33
-];
 
 
-taskArray2=[1,2,3,[12,15,[2,[123,[345],125,[125,346],226],1156],34643],12515,34643,[125,124,[44,12],235],33];
+function double_array(array,index=0)
+{
+  //base case when index goes to end
+  if(index>=array.length)
+  {
+    return array;
+  }
+  array[index]*=2;
+  return double_array(array,index+1);
+
+}
+
+console.log(double_array([1,2,3,4,5]));
+//taskArray=[1,
+//  2,
+//  3,
+//  [4,5,6],
+//  7,
+//  [8,
+//    [9,10,11,
+//      [12,13,14]
+//    ]
+//  ],
+//  [15,16,17,18,19,
+//    [20,21,22,
+//      [23,24,25,
+//      [26,27,29]
+//      ],30,31
+//    ],32
+//  ],33
+//];
+//
+//
+//taskArray2=[1,2,3,[12,15,[2,[123,[345],125,[125,346],226],1156],34643],12515,34643,[125,124,[44,12],235],33];
 
 //console.table(taskArray);
 
 //printNestedArrayContents(taskArray);
 
-printNestedArrayContents(taskArray2);
+//printNestedArrayContents(taskArray2);
 
 //console.log(sumNumbersBetweenTwoValues(1,10));
 
