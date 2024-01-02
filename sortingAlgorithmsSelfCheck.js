@@ -1,3 +1,6 @@
+
+//Sorting algorithms
+//----------------------------------------------------------------
 let selectionSort = (array) => {
   for (let i = 0; i < array.length - 1; i++) {
     let lowestNumberIndex = i;
@@ -278,6 +281,8 @@ function largestProduct(array){
 //write a function that returns the intersections of two arrays [1,2,3,4,5] 
 //[0,2,4,5,8] result [2,4]
 
+//------------------------------------------------------------------------
+//hashmaps maps etc
 function intersectionOfArrays(array1,array2)
 {
   let largerArray;
@@ -360,6 +365,7 @@ function findMissingAlphabetLetter(inputString)
   }
 }
 
+
 function findFirstNonDuplicatedCharactersInAString(inputString)
 {
   const charactersMap={};
@@ -384,6 +390,8 @@ for(const letter in charactersMap)
 }
 }
 
+//------------------------------------------------------------------------
+//Stacks and Queues
 class Stack
 {
   constructor(){
@@ -531,8 +539,8 @@ function reverseAString(string)
   }
   return newString;
 }
-
-
+//------------------------------------------------------------------------
+//Recursive chapters
 //import filesystem module & path module
 const fs=require('fs');
 const path=require('path');
@@ -627,7 +635,7 @@ function double_array(array,index=0)
 
 }
 
-console.log(double_array([1,2,3,4,5]));
+//console.log(double_array([1,2,3,4,5]));
 //taskArray=[1,
 //  2,
 //  3,
