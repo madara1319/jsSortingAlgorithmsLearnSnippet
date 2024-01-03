@@ -635,6 +635,27 @@ function double_array(array,index=0)
 
 }
 
+function reverseAStringRecursive(testString)
+{
+  if (testString.length==1)
+  {
+    return testString[0];
+  }
+  return (
+    reverseAStringRecursive
+    (
+        testString.slice(1,testString.length)
+    )+testString[0]);
+}
+
+
+console.log(reverseAStringRecursive("abcde"));
+//const chujString="abcde";
+//const a=chujString.slice(1,chujString.length);
+//const b=(chujString[0]);
+//console.log(a+b);
+
+
 //console.log(double_array([1,2,3,4,5]));
 //taskArray=[1,
 //  2,
