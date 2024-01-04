@@ -649,7 +649,26 @@ function reverseAStringRecursive(testString)
 }
 
 
-console.log(reverseAStringRecursive("abcde"));
+
+function countOccurencesOfX(exampleString)
+{
+  if (exampleString.length==0)
+  {
+    return 0;
+  }
+  if (exampleString[0]=="x")
+  {
+    return (1+countOccurencesOfX(exampleString.slice(1,exampleString.length)));
+
+  }
+  else
+  {
+    return (countOccurencesOfX(exampleString.slice(1,exampleString.length)));
+  }
+}
+
+console.log(countOccurencesOfX("axbxcxd"));
+//console.log(reverseAStringRecursive("abcde"));
 //const chujString="abcde";
 //const a=chujString.slice(1,chujString.length);
 //const b=(chujString[0]);
