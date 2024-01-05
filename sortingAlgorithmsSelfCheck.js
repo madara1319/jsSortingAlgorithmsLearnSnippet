@@ -667,7 +667,26 @@ function countOccurencesOfX(exampleString)
   }
 }
 
-console.log(countOccurencesOfX("axbxcxd"));
+
+
+function numberOfPaths(n)
+{
+  if(n<0)
+  {
+    return 0;
+  }
+  if (n==1||n==0)
+  {
+    return 1;
+  }
+  return (numberOfPaths(n-1)+numberOfPaths(n-2)+numberOfPaths(n-3));
+}
+
+
+console.log(numberOfPaths(5));
+//console.log(countOccurencesOfX("axbxcxd"));
+
+
 //console.log(reverseAStringRecursive("abcde"));
 //const chujString="abcde";
 //const a=chujString.slice(1,chujString.length);
