@@ -683,7 +683,25 @@ function numberOfPaths(n)
 }
 
 
-console.log(numberOfPaths(5));
+function anagramGenerator(justSomeString)
+{
+  if (string.length==1)
+  {
+    return string[0];
+  }
+  let collection=[];
+  let substringAnagrams=anagramGenerator(justSomeString.slice(1,justSomeString.length));
+  for (const element of substringAnagrams)
+  {
+    for (const subElement of element)
+    {
+      const copy=substringAnagrams;
+      collection.push(copy.)
+    }
+  }
+}
+
+//console.log(numberOfPaths(5));
 //console.log(countOccurencesOfX("axbxcxd"));
 
 
