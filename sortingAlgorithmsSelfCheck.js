@@ -683,25 +683,73 @@ function numberOfPaths(n)
 }
 
 
-function anagramGenerator(justSomeString)
-{
-  if (string.length==1)
-  {
-    return string[0];
+//function anagramGenerator(justSomeString)
+//{
+//  if (justSomeString.length==1)
+//  {
+//    return justSomeString[0];
+//  }
+//  let collection=[];
+//  let substringAnagrams=anagramGenerator(justSomeString.slice(1,justSomeString.length));
+//  for (const element of substringAnagrams)
+//  {
+//    for (const subElement of element)
+//    {
+//      const copy=substringAnagrams;
+//      collection.push(copy);
+//    }
+//  }
+//  return collection;
+//}
+//console.log(anagramGenerator("abc"))
+
+
+//function anagramGenerator(justSomeString) {
+//  if (justSomeString.length === 1) {
+//    return [justSomeString];
+//  }
+//
+//  let collection = [];
+//  let substringAnagrams = anagramGenerator(justSomeString.slice(1));
+//
+//  for (const element of substringAnagrams) {
+//    for (let i = 0; i <= element.length; i++) {
+//      let copy = element.slice();
+//      copy.split().splice(i, 0, justSomeString[0]);
+//      collection.push(copy);
+//    }
+//  }
+//
+//  return collection;
+//}
+//
+//console.log(anagramGenerator("abc"));
+
+
+
+function anagramGenerator(justSomeString) {
+  if (justSomeString.length === 1) {
+    return [justSomeString];
   }
-  let collection=[];
-  let substringAnagrams=anagramGenerator(justSomeString.slice(1,justSomeString.length));
-  for (const element of substringAnagrams)
-  {
-    for (const subElement of element)
-    {
-      const copy=substringAnagrams;
-      collection.push(copy.)
+
+  let collection = [];
+  let substringAnagrams = anagramGenerator(justSomeString.slice(1));
+
+  for (const element of substringAnagrams) {
+    for (let i = 0; i <= element.length; i++) {
+      let copy = element.slice(0, i) + justSomeString[0] + element.slice(i);
+      collection.push(copy);
     }
   }
+
+  return collection;
 }
 
+console.log(anagramGenerator("abc"));
+
+
 //console.log(numberOfPaths(5));
+
 //console.log(countOccurencesOfX("axbxcxd"));
 
 
