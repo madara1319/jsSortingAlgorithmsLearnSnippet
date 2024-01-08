@@ -692,6 +692,10 @@ function anagramGenerator(justSomeString) {
   let substringAnagrams = anagramGenerator(justSomeString.slice(1));
 
   for (const element of substringAnagrams) {
+    console.log("substringAnagrams: ");
+    console.table(substringAnagrams);
+    console.log("collection: ");
+    console.table(collection);
     for (let i = 0; i <= element.length; i++) {
       let copy = element.slice(0, i) + justSomeString[0] + element.slice(i);
       console.log("element jest taki: " + element);
@@ -700,7 +704,9 @@ function anagramGenerator(justSomeString) {
       console.log("kopia numero: " + i + " kopa anagramu to " + copy);
       console.log("_________________________________________________________");
       collection.push(copy);
+
     }
+
   }
 
   return collection;
