@@ -683,50 +683,6 @@ function numberOfPaths(n)
 }
 
 
-//function anagramGenerator(justSomeString)
-//{
-//  if (justSomeString.length==1)
-//  {
-//    return justSomeString[0];
-//  }
-//  let collection=[];
-//  let substringAnagrams=anagramGenerator(justSomeString.slice(1,justSomeString.length));
-//  for (const element of substringAnagrams)
-//  {
-//    for (const subElement of element)
-//    {
-//      const copy=substringAnagrams;
-//      collection.push(copy);
-//    }
-//  }
-//  return collection;
-//}
-//console.log(anagramGenerator("abc"))
-
-
-//function anagramGenerator(justSomeString) {
-//  if (justSomeString.length === 1) {
-//    return [justSomeString];
-//  }
-//
-//  let collection = [];
-//  let substringAnagrams = anagramGenerator(justSomeString.slice(1));
-//
-//  for (const element of substringAnagrams) {
-//    for (let i = 0; i <= element.length; i++) {
-//      let copy = element.slice();
-//      copy.split().splice(i, 0, justSomeString[0]);
-//      collection.push(copy);
-//    }
-//  }
-//
-//  return collection;
-//}
-//
-//console.log(anagramGenerator("abc"));
-
-
-
 function anagramGenerator(justSomeString) {
   if (justSomeString.length === 1) {
     return [justSomeString];
@@ -738,6 +694,11 @@ function anagramGenerator(justSomeString) {
   for (const element of substringAnagrams) {
     for (let i = 0; i <= element.length; i++) {
       let copy = element.slice(0, i) + justSomeString[0] + element.slice(i);
+      console.log("element jest taki: " + element);
+      console.log("element.slice(0,i) wynosi: " + element.slice(0,i) + " Zas element slice(i) wynosi: " + element.slice(i));
+      console.log("justSomeString[0] wynosi: " + justSomeString[0]);
+      console.log("kopia numero: " + i + " kopa anagramu to " + copy);
+      console.log("_________________________________________________________");
       collection.push(copy);
     }
   }
