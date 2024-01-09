@@ -871,11 +871,25 @@ function countCharactersOfStringsArray(stringsArray)
   }
 }
 
-console.log(countCharactersOfStringsArray(["ab","c","def","ghi"]));
+//console.log(countCharactersOfStringsArray(["ab","c","def","ghi"]));
 
-console.log(countCharactersOfStringsArray([]));
+//console.log(countCharactersOfStringsArrar([]));
 
+function filterOddNumbers(arrayOfNumbers)
+{
+  let arrayOfEvenNumbers=[];
+  if (arrayOfNumbers[0]%2==0)
+  {
+      arrayOfEvenNumbers.push(arrayOfNumbers[0]);
+      return arrayOfEvenNumbers[0] + filterOddNumbers(arrayOfNumbers.slice(1,arrayOfNumbers.length));
+  }
+  else
+  {
+    return (filterOddNumbers(arrayOfNumbers.slice(1,arrayOfNumbers.length)));
+  }
+}
 
+console.log(filterOddNumbers([1,2,3,4,5,6]));
 
 
 
