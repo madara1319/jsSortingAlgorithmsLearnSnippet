@@ -70,6 +70,33 @@ let insertionSort = (array) => {
 //	
 //});
 
+
+
+//let startTimeInsertion=new Date();
+//console.table(insertionSort(test__array));
+//
+//let endTimeInsertion=new Date();
+//let timeElapsedInsertion=endTimeInsertion-startTimeInsertion;
+//
+//console.log(`InsertionSort time ${1000*timeElapsedInsertion}`);
+// console.log('bubble Sort test');
+//
+//let startTimeBubble=new Date();
+// console.table(bubbleSort(test__array));
+//
+//let endTimeBubble=new Date();
+//let timeElapsedBubble=endTimeBubble-startTimeBubble;
+//
+//console.log(`BubbleSort time ${1000*timeElapsedBubble}`);
+// console.log('Selection Sort test');
+//
+//let startTimeSelection=new Date();
+// console.table(selectionSort(test__array));
+//
+//let endTimeSelection=new Date();
+//let timeElapsedSelection=endTimeSelection-startTimeSelection;
+//console.log(`SelectionSort time ${1000*timeElapsedSelection}`);
+
 const biggestValueEqualToOccurence=(array)=>
 {
 	let resultsArray=[];
@@ -238,6 +265,18 @@ let findNeedle=(needle,haystack)=>
     */
   return false;
 }
+
+
+//console.log(findMissingAlphabetLetter("the quick brown box jumps over a lazy dog"))
+//console.log(findDuplicatesInString(["a","b","c","d","e","f","c","g","h","i","d"]));
+//console.log(intersectionOfArrays([1,2,3,4,5],[0,2,4,5,6,8]));
+
+//console.log(intersectionOfArrays(["a","b","c","d","e","f"],["b","d","f"]));
+
+//console.log(findNeedle("def","abcdefghi"));
+//console.log(`Merge 2 posortowanych tablic [100,101,123,256] i [1,12,35,46,59,69,99] wynosi mergeArray ${mergeArray([100,101,123,256],[1,12,35,46,59,69,99])}`) ;
+//console.table(test__array);
+
 /*I sure understand that its O(N^3) but that innermost loop would run N/4 times
 as the book says im not so sure but whatever
   */
@@ -413,6 +452,23 @@ class Stack
 }
 
 
+
+//const testStack=new Stack();
+//testStack.push(2);
+//testStack.push(5);
+//testStack.push(125122);
+//testStack.push(12);
+//
+//
+//
+//console.log(testStack.read);
+//testStack.pop();
+//
+//console.log(testStack.read);
+//console.log(findFirstNonDuplicatedCharactersInAString("minimum"));
+
+
+
 class Linter
 {
   constructor()
@@ -495,6 +551,26 @@ class Queue
 }
 
 
+
+//const testQueue=new Queue();
+//testQueue.push(1);
+//testQueue.push(2);
+//testQueue.push(3);
+//testQueue.push(4);
+//testQueue.push(5);
+//console.log(testQueue.read);
+//console.log(testQueue.pop());
+//
+//console.log(testQueue.read);
+//console.log(testQueue.pop());
+//
+//console.log(testQueue.read);
+//console.log(testQueue.pop());
+//const linter= new Linter();
+//linter.lint(" ( var x = { y: [ 1 , 2 , 3 ] } )");
+
+//linter.lint("([  var x = { y: [ 1 , 2 , 3 ] } )");
+
 class PrintManager 
 {
   constructor()
@@ -523,6 +599,18 @@ class PrintManager
 }
 
 
+//print_manager=new PrintManager();
+//print_manager.queuePrintJob("First Document");
+//print_manager.queuePrintJob("Second Document");
+//print_manager.queuePrintJob("Third Document");
+//print_manager.run();
+//print_manager.queuePrintJob("Document26");
+//
+//print_manager.queuePrintJob("Document56");
+//print_manager.run();
+
+
+
 function reverseAString(string)
 {
   let newString=""; 
@@ -539,6 +627,10 @@ function reverseAString(string)
   }
   return newString;
 }
+
+
+//console.log(reverseAString("!dlroWolleH"));
+
 //------------------------------------------------------------------------
 //Recursive chapters
 //import filesystem module & path module
@@ -590,6 +682,14 @@ function findDirectories(directory)
 
 }
 
+
+
+//findOneLevelDirectories('C:/dev/');
+
+//findTwoLevelDirectories('C:/dev/');
+//findDirectories('C:/dev/');
+
+
 function sumNumbersBetweenTwoValues(low,high)
 {
   if (low==high)
@@ -601,6 +701,8 @@ function sumNumbersBetweenTwoValues(low,high)
   return (high + sum(low,high-1));
 }
 
+
+//console.log(sumNumbersBetweenTwoValues(1,10));
 
 function printNestedArrayContents(array)
 {
@@ -619,112 +721,6 @@ function printNestedArrayContents(array)
     }
   }
 }
-
-
-
-
-function double_array(array,index=0)
-{
-  //base case when index goes to end
-  if(index>=array.length)
-  {
-    return array;
-  }
-  array[index]*=2;
-  return double_array(array,index+1);
-
-}
-
-function reverseAStringRecursive(testString)
-{
-  if (testString.length==1)
-  {
-    return testString[0];
-  }
-  return (
-    reverseAStringRecursive
-    (
-        testString.slice(1,testString.length)
-    )+testString[0]);
-}
-
-
-
-function countOccurencesOfX(exampleString)
-{
-  if (exampleString.length==0)
-  {
-    return 0;
-  }
-  if (exampleString[0]=="x")
-  {
-    return (1+countOccurencesOfX(exampleString.slice(1,exampleString.length)));
-
-  }
-  else
-  {
-    return (countOccurencesOfX(exampleString.slice(1,exampleString.length)));
-  }
-}
-
-
-
-function numberOfPaths(n)
-{
-  if(n<0)
-  {
-    return 0;
-  }
-  if (n==1||n==0)
-  {
-    return 1;
-  }
-  return (numberOfPaths(n-1)+numberOfPaths(n-2)+numberOfPaths(n-3));
-}
-
-
-function anagramGenerator(justSomeString) {
-  if (justSomeString.length === 1) {
-    return [justSomeString];
-  }
-
-  let collection = [];
-  let substringAnagrams = anagramGenerator(justSomeString.slice(1));
-
-  for (const element of substringAnagrams) {
-    console.log("substringAnagrams: ");
-    console.table(substringAnagrams);
-    console.log("collection: ");
-    console.table(collection);
-    for (let i = 0; i <= element.length; i++) {
-      let copy = element.slice(0, i) + justSomeString[0] + element.slice(i);
-      console.log("element jest taki: " + element);
-      console.log("element.slice(0,i) wynosi: " + element.slice(0,i) + " Zas element slice(i) wynosi: " + element.slice(i));
-      console.log("justSomeString[0] wynosi: " + justSomeString[0]);
-      console.log("kopia numero: " + i + " kopa anagramu to " + copy);
-      console.log("_________________________________________________________");
-      collection.push(copy);
-
-    }
-
-  }
-
-  return collection;
-}
-
-console.log(anagramGenerator("abc"));
-
-
-//console.log(numberOfPaths(5));
-
-//console.log(countOccurencesOfX("axbxcxd"));
-
-
-//console.log(reverseAStringRecursive("abcde"));
-//const chujString="abcde";
-//const a=chujString.slice(1,chujString.length);
-//const b=(chujString[0]);
-//console.log(a+b);
 
 
 //console.log(double_array([1,2,3,4,5]));
@@ -756,92 +752,120 @@ console.log(anagramGenerator("abc"));
 
 //printNestedArrayContents(taskArray2);
 
-//console.log(sumNumbersBetweenTwoValues(1,10));
+
+function double_array(array,index=0)
+{
+  //base case when index goes to end
+  if(index>=array.length)
+  {
+    return array;
+  }
+  array[index]*=2;
+  return double_array(array,index+1);
+
+}
 
 
-//findOneLevelDirectories('C:/dev/');
 
-//findTwoLevelDirectories('C:/dev/');
-//findDirectories('C:/dev/');
-
-
-//console.log(reverseAString("!dlroWolleH"));
-
-//print_manager=new PrintManager();
-//print_manager.queuePrintJob("First Document");
-//print_manager.queuePrintJob("Second Document");
-//print_manager.queuePrintJob("Third Document");
-//print_manager.run();
-//print_manager.queuePrintJob("Document26");
-//
-//print_manager.queuePrintJob("Document56");
-//print_manager.run();
+function reverseAStringRecursive(testString)
+{
+  if (testString.length==1)
+  {
+    return testString[0];
+  }
+  return (
+    reverseAStringRecursive
+    (
+        testString.slice(1,testString.length)
+    )+testString[0]);
+}
 
 
-//const testQueue=new Queue();
-//testQueue.push(1);
-//testQueue.push(2);
-//testQueue.push(3);
-//testQueue.push(4);
-//testQueue.push(5);
-//console.log(testQueue.read);
-//console.log(testQueue.pop());
-//
-//console.log(testQueue.read);
-//console.log(testQueue.pop());
-//
-//console.log(testQueue.read);
-//console.log(testQueue.pop());
-//const linter= new Linter();
-//linter.lint(" ( var x = { y: [ 1 , 2 , 3 ] } )");
+//console.log(reverseAStringRecursive("abcde"));
+//const chujString="abcde";
+//const a=chujString.slice(1,chujString.length);
+//const b=(chujString[0]);
+//console.log(a+b);
 
-//linter.lint("([  var x = { y: [ 1 , 2 , 3 ] } )");
+function countOccurencesOfX(exampleString)
+{
+  if (exampleString.length==0)
+  {
+    return 0;
+  }
+  if (exampleString[0]=="x")
+  {
+    return (1+countOccurencesOfX(exampleString.slice(1,exampleString.length)));
 
-//const testStack=new Stack();
-//testStack.push(2);
-//testStack.push(5);
-//testStack.push(125122);
-//testStack.push(12);
-//
-//
-//
-//console.log(testStack.read);
-//testStack.pop();
-//
-//console.log(testStack.read);
-//console.log(findFirstNonDuplicatedCharactersInAString("minimum"));
+  }
+  else
+  {
+    return (countOccurencesOfX(exampleString.slice(1,exampleString.length)));
+  }
+}
 
-//console.log(findMissingAlphabetLetter("the quick brown box jumps over a lazy dog"))
-//console.log(findDuplicatesInString(["a","b","c","d","e","f","c","g","h","i","d"]));
-//console.log(intersectionOfArrays([1,2,3,4,5],[0,2,4,5,6,8]));
 
-//console.log(intersectionOfArrays(["a","b","c","d","e","f"],["b","d","f"]));
 
-//console.log(findNeedle("def","abcdefghi"));
-//console.log(`Merge 2 posortowanych tablic [100,101,123,256] i [1,12,35,46,59,69,99] wynosi mergeArray ${mergeArray([100,101,123,256],[1,12,35,46,59,69,99])}`) ;
-//console.table(test__array);
+//console.log(countOccurencesOfX("axbxcxd"));
 
-//let startTimeInsertion=new Date();
-//console.table(insertionSort(test__array));
-//
-//let endTimeInsertion=new Date();
-//let timeElapsedInsertion=endTimeInsertion-startTimeInsertion;
-//
-//console.log(`InsertionSort time ${1000*timeElapsedInsertion}`);
-// console.log('bubble Sort test');
-//
-//let startTimeBubble=new Date();
-// console.table(bubbleSort(test__array));
-//
-//let endTimeBubble=new Date();
-//let timeElapsedBubble=endTimeBubble-startTimeBubble;
-//
-//console.log(`BubbleSort time ${1000*timeElapsedBubble}`);
-// console.log('Selection Sort test');
-//
-//let startTimeSelection=new Date();
-// console.table(selectionSort(test__array));
-//
-//let endTimeSelection=new Date();
-//let timeElapsedSelection=endTimeSelection-startTimeSelection;
-//console.log(`SelectionSort time ${1000*timeElapsedSelection}`);
+function numberOfPaths(n)
+{
+  if(n<0)
+  {
+    return 0;
+  }
+  if (n==1||n==0)
+  {
+    return 1;
+  }
+  return (numberOfPaths(n-1)+numberOfPaths(n-2)+numberOfPaths(n-3));
+}
+
+//console.log(numberOfPaths(5));
+
+function anagramGenerator(justSomeString) {
+  if (justSomeString.length === 1) {
+    return [justSomeString];
+  }
+
+  let collection = [];
+  let substringAnagrams = anagramGenerator(justSomeString.slice(1));
+
+  for (const element of substringAnagrams) {
+    console.log("substringAnagrams: ");
+    console.table(substringAnagrams);
+    console.log("collection: ");
+    console.table(collection);
+    for (let i = 0; i <= element.length; i++) {
+      let copy = element.slice(0, i) + justSomeString[0] + element.slice(i);
+      console.log("element jest taki: " + element);
+      console.log("element.slice(0,i) wynosi: " + element.slice(0,i) + " Zas element slice(i) wynosi: " + element.slice(i));
+      console.log("justSomeString[0] wynosi: " + justSomeString[0]);
+      console.log("kopia numero: " + i + " kopa anagramu to " + copy);
+      console.log("_________________________________________________________");
+      collection.push(copy);
+
+    }
+
+  }
+
+  return collection;
+}
+
+//console.log(anagramGenerator("abc"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
