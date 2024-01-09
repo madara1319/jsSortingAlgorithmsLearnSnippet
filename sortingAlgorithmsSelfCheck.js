@@ -855,10 +855,25 @@ function anagramGenerator(justSomeString) {
 //console.log(anagramGenerator("abc"));
 
 
+function countCharactersOfStringsArray(stringsArray)
+{
+  if (stringsArray.length==1)
+  {
+    return stringsArray[0].length;
+  }
+  else if(stringsArray.length==0)
+  {
+    return 0;
+  }
+  else 
+  {
+    return stringsArray[0].length + countCharactersOfStringsArray(stringsArray.slice(1,stringsArray.length));
+  }
+}
 
+console.log(countCharactersOfStringsArray(["ab","c","def","ghi"]));
 
-
-
+console.log(countCharactersOfStringsArray([]));
 
 
 
