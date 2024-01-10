@@ -884,15 +884,19 @@ function filterOddNumbers(arrayOfNumbers)
   }
   else if (arrayOfNumbers[0]%2==0)
   {
+    console.log("przypadek if: " + arrayOfNumbers.slice(1));
       return [arrayOfNumbers[0], ...filterOddNumbers(arrayOfNumbers.slice(1))];
   }
   else
   {
+    console.log("przypadek else: " + arrayOfNumbers.slice(1));
     return (filterOddNumbers(arrayOfNumbers.slice(1)));
   }
 }
 
-console.log(filterOddNumbers([1,2,3,4,5,6]));
+console.log("_________________________________");
+filterOddNumbers([1,2,3,4,5,6]);
+//console.log(filterOddNumbers([1,2,3,4,5,6]));
 
 
 
