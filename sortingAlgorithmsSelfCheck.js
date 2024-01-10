@@ -877,15 +877,18 @@ function countCharactersOfStringsArray(stringsArray)
 
 function filterOddNumbers(arrayOfNumbers)
 {
-  let arrayOfEvenNumbers=[];
-  if (arrayOfNumbers[0]%2==0)
+
+  if (arrayOfNumbers.length==0)
   {
-      arrayOfEvenNumbers.push(arrayOfNumbers[0]);
-      return arrayOfEvenNumbers[0] + filterOddNumbers(arrayOfNumbers.slice(1,arrayOfNumbers.length));
+    return [];
+  }
+  else if (arrayOfNumbers[0]%2==0)
+  {
+      return [arrayOfNumbers[0], ...filterOddNumbers(arrayOfNumbers.slice(1))];
   }
   else
   {
-    return (filterOddNumbers(arrayOfNumbers.slice(1,arrayOfNumbers.length)));
+    return (filterOddNumbers(arrayOfNumbers.slice(1)));
   }
 }
 
