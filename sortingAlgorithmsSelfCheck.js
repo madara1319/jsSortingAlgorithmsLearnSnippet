@@ -894,11 +894,29 @@ function filterOddNumbers(arrayOfNumbers)
   }
 }
 
-console.log("_________________________________");
-filterOddNumbers([1,2,3,4,5,6]);
+//console.log("_________________________________");
+//filterOddNumbers([1,2,3,4,5,6]);
 //console.log(filterOddNumbers([1,2,3,4,5,6]));
 
+/*triangular numbers 1,3,6,10,15,21 nex number is N + previous number*/
+function triangularNumbers(exampleNumber)
+{
+  if (exampleNumber==0)
+  {
+    return 0;
+  }
+  else if(exampleNumber==1)
+  {
+    return 1;
 
+  }
+  else
+  {
+    return (exampleNumber+triangularNumbers(exampleNumber-1));
+  }
+}
+
+console.log(triangularNumbers(2));
 
 
 
