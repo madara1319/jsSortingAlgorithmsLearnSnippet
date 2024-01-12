@@ -912,11 +912,12 @@ function triangularNumbers(exampleNumber)
   }
   else
   {
+    console.log('exampleNumber: ' + exampleNumber + ' exampleNumber+triangular(exampleNumber-1): ' + exampleNumber+triangularNumbers(exampleNumber-1));
     return (exampleNumber+triangularNumbers(exampleNumber-1));
   }
 }
 
-console.log(triangularNumbers(2));
+console.log(triangularNumbers(7));
 
 
 
