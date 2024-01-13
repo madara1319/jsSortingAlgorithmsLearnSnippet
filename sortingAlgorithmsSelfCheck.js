@@ -912,15 +912,28 @@ function triangularNumbers(exampleNumber)
   }
   else
   {
-    console.log('exampleNumber: ' + exampleNumber + ' exampleNumber+triangular(exampleNumber-1): ' + exampleNumber+triangularNumbers(exampleNumber-1));
     return (exampleNumber+triangularNumbers(exampleNumber-1));
   }
 }
 
-console.log(triangularNumbers(7));
+//console.log(triangularNumbers(7));
 
-
-
+function findXIndex(supposedString,currentIndex=0)
+{
+  if (supposedString[0]=="x")
+  {
+    return currentIndex;
+  }
+  else if (supposedString.length==0)
+  {
+    return -1;
+  }
+  else
+  {
+    return findXIndex(supposedString.slice(1),currentIndex+1);
+  }
+}
+console.log(findXIndex("abcdeaasdasd"));
 
 
 
