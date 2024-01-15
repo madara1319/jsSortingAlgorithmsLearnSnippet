@@ -933,7 +933,7 @@ function findXIndex(supposedString,currentIndex=0)
     return findXIndex(supposedString.slice(1),currentIndex+1);
   }
 }
-console.log(findXIndex("abcdeaasdasd"));
+console.log(findXIndex("abcdeaasdxasd"));
 
 
 
