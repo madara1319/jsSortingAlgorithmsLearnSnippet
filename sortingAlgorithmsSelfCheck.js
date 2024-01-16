@@ -933,7 +933,32 @@ function findXIndex(supposedString,currentIndex=0)
     return findXIndex(supposedString.slice(1),currentIndex+1);
   }
 }
-console.log(findXIndex("abcdeaasdxasd"));
+//console.log(findXIndex("abcdeaasdxasd"));
 
 
+function UniquePaths(numberOfRows,numberOfColumns)
+{
+  //calculate shortest path from going to upper-leftmost to lower-rightmost
+  if (numberOfRows==1 || numberOfColumns==1)
+  {
+    return 1;
+  }
+  else if (numberOfRows==0 || numberOfColumns==0)
+  {
+    return -1;
+  }
+  //else if (numberOfRows==2)
+  //{
+  //  return numberOfColumns;
+  //}
+  //else if(numberOfColumns==2)
+  //{
+  //  return numberOfRows;
+  //}
+  else
+  {
+    return (UniquePaths((numberOfRows-1),(numberOfColumns-1)));
+  }
+}
 
+console.log(UniquePaths(3,3));
