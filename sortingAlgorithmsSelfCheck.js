@@ -954,4 +954,28 @@ function UniquePaths(numberOfRows,numberOfColumns)
   }
 }
 
-console.log(UniquePaths(3,3));
+//console.log(UniquePaths(3,3));
+
+
+function findArrayMaxValue(simpleArray)
+{
+  console.log("RECURSION HAPPENED");
+  if (simpleArray.length==1)
+  {
+    return simpleArray[0];
+  }
+  else if(simpleArray.length==0)
+  {
+    return -1;
+  }
+  else if(simpleArray[0]>findArrayMaxValue(simpleArray.slice(1,simpleArray.length)))
+  {
+    return simpleArray[0];
+  }
+  else 
+  {
+    return findArrayMaxValue(simpleArray.slice(1,simpleArray.length))
+  }
+}
+//for only 4 values i get 15 recursion function calls
+console.log(findArrayMaxValue([1,2,3,4]));
