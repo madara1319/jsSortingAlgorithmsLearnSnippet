@@ -947,17 +947,10 @@ function UniquePaths(numberOfRows,numberOfColumns)
   {
     return -1;
   }
-  //else if (numberOfRows==2)
-  //{
-  //  return numberOfColumns;
-  //}
-  //else if(numberOfColumns==2)
-  //{
-  //  return numberOfRows;
-  //}
   else
   {
-    return (UniquePaths((numberOfRows-1),(numberOfColumns-1)));
+    //subproblems are if u decrease one dimension and u gotta add solutions of the subproblems to get the problem result
+    return (UniquePaths(numberOfRows,(numberOfColumns-1))+UniquePaths((numberOfRows-1),numberOfColumns));
   }
 }
 
