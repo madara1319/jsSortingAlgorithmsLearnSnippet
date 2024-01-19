@@ -978,7 +978,7 @@ function findArrayMaxValueWrong(simpleArray)
   }
 }
 
-console.log(findArrayMaxValueWrong([1,2,3,4]));
+console.log(findArrayMaxValueWrong([1,2,3]));
 
 function findArrayMaxValue(simpleArray)
 {
@@ -1004,4 +1004,4 @@ function findArrayMaxValue(simpleArray)
   }
 }
 //for only 4 values i get 15 recursion function calls
-console.log(findArrayMaxValue([1,2,3,4]));
+console.log(findArrayMaxValue([1,2,3]));
