@@ -1019,6 +1019,25 @@ function fibonacciSequence(yourNumber)
 }
 
 
-console.log(fibonacciSequence(10));
+//console.log(fibonacciSequence(10));
+
+//memoization 1 of 2 optimizing techniques used in dynamic programming
+function dynamicFibonacci(fibNumber,memo)
+{
+  if (fibNumber==0 || fibNumber==1)
+  {
+    return fibNumber;
+  }
+  else if (memo[fibNumber]==undefined)
+  {
+    memo[fibNumber]=dynamicFibonacci(fibNumber-2,memo)+dynamicFibonacci(fibNumber-1,memo);
+  }
+
+  return memo[fibNumber];
+}
+
+console.log(dynamicFibonacci(6,{}));
+
+
 
 
