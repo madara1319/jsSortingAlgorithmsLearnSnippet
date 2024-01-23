@@ -1036,8 +1036,27 @@ function dynamicFibonacci(fibNumber,memo={})
   return memo[fibNumber];
 }
 
-console.log(dynamicFibonacci(6));
+//console.log(dynamicFibonacci(6));
 
+//2 dynamic coding optimization technique is using bottom-up technique for
+//problems that on first glance seem to need recursion
+function dynamicFib(n)
+{
+  if(n==0)
+  {
+    return 0;
+  }
+  let a=0;
+  let b=1;
+  for (let i=1; i<n; i++)
+  {
+    let temp=a;
+    a=b;
+    b=temp+a;
+  }
+  return b;
+}
 
+console.log(dynamicFib(6));
 
 
