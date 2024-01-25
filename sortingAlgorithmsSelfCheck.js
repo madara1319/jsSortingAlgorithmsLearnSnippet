@@ -1057,6 +1057,6 @@ function dynamicFib(n)
   return b;
 }
 
-console.log(dynamicFib(8));
+console.log(dynamicFib(6));
 
 
