@@ -1057,6 +1057,27 @@ function dynamicFib(n)
   return b;
 }
 
-console.log(dynamicFib(6));
+//console.log(dynamicFib(6));
 
+
+function add_until_100(array)
+{
+  console.log("recursion happened");
+  if (array.length==0)
+  {
+    return 0;
+  }
+  if ((array[0]+(add_until_100(array.slice(1,array.length))))>100)
+  {
+    return add_until_100(array.slice(1,array.length))
+
+  }
+  else 
+  {
+    return (array[0] + add_until_100(array.slice(1,array.length)));
+  }
+}
+
+
+console.log(add_until_100([1,2,5,6,36,12,72,6,1,1,15]));
 
