@@ -1067,14 +1067,15 @@ function add_until_100(array)
   {
     return 0;
   }
-  if ((array[0]+(add_until_100(array.slice(1,array.length))))>100)
+  let temp=add_until_100(array.slice(1,array.length))
+  if ((array[0]+temp)>100)
   {
-    return add_until_100(array.slice(1,array.length))
+    return temp; 
 
   }
   else 
   {
-    return (array[0] + add_until_100(array.slice(1,array.length)));
+    return (array[0] + temp);
   }
 }
 
