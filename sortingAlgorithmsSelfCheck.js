@@ -1080,5 +1080,5 @@ function add_until_100(array)
 }
 
 
-console.log(add_until_100([1,2,5,6,36,12,72,6,1,1,15]));
+console.log(add_until_100([1,2,5,7,6,36,12,72,6,1,1,15]));
 
