@@ -1079,6 +1079,6 @@ function add_until_100(array)
   }
 }
 
-
+console.log("test");
 console.log(add_until_100([1,2,5,7,6,36,12,6,1,1,15]));
 
