@@ -1079,6 +1079,28 @@ function add_until_100(array)
   }
 }
 
-console.log("test");
-console.log(add_until_100([1,2,5,7,6,36,12,6,1,1,15]));
+//console.log("test");
+//console.log(add_until_100([1,2,5,7,6,36,12,6,1,1,15]));
+
+function golomb(n,memo={})
+{
+  if (n==1)
+  {
+    return 1;
+  }
+  else if(memo!==undefined)
+  {
+    memo[n]=1+golomb(n - golomb(golomb(n-1,memo),memo),memo)
+  }
+  
+
+    return memo[n];
+
+}
+let i=0;
+while(i<40)
+{
+ i++; 
+console.log("golomb od " + i + " wynosi: " + golomb(i));
+}
 
