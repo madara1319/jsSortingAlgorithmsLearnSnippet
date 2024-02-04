@@ -1097,10 +1097,25 @@ function golomb(n,memo={})
     return memo[n];
 
 }
-let i=0;
-while(i<40)
+//let i=0;
+//while(i<40)
+//{
+// i++; 
+//console.log("golomb od " + i + " wynosi: " + golomb(i));
+//}
+
+function UniquePathsMemo(rows,columns,memo={})
 {
- i++; 
-console.log("golomb od " + i + " wynosi: " + golomb(i));
+  if(rows==1||columns==1)
+  {
+    return 1;
+  }
+  else if(memo!==undefined)
+  {
+    memo[n]=
+    return UniquePathsMemo(rows-1,columns) + UniquePathsMemo(rows,columns-1)
+  }
 }
+console.log(UniquePathsMemo(3,3));
+
 
