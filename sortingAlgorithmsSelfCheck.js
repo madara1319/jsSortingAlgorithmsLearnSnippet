@@ -938,6 +938,8 @@ function findXIndex(supposedString,currentIndex=0)
 
 function UniquePaths(numberOfRows,numberOfColumns)
 {
+
+  console.log("recursion happened");
   //calculate shortest path from going to upper-leftmost to lower-rightmost
   if (numberOfRows==1 || numberOfColumns==1)
   {
@@ -1106,6 +1108,7 @@ function golomb(n,memo={})
 
 function UniquePathsMemo(rows,columns,memo={})
 {
+  console.log("recursion happened in memoization func");
   if(rows==1||columns==1)
   {
     return 1;
