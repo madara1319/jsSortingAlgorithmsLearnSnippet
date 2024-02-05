@@ -1112,10 +1112,11 @@ function UniquePathsMemo(rows,columns,memo={})
   }
   else if(memo!==undefined)
   {
-    memo[n]=
-    return UniquePathsMemo(rows-1,columns) + UniquePathsMemo(rows,columns-1)
+    memo[[rows,columns]]=UniquePathsMemo(rows-1,columns,memo) + UniquePathsMemo(rows,columns-1,memo)
   }
+return memo[[rows,columns]];
 }
-console.log(UniquePathsMemo(3,3));
+console.log(UniquePathsMemo(4,3));
 
+console.log(UniquePaths(4,3));
 
