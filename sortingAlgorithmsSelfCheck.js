@@ -1136,3 +1136,6 @@ class SortableArray
 
   }
 }
+
+
+const newTest=new SortableArray();
