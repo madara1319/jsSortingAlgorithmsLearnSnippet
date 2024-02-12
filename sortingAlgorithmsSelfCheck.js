@@ -1127,15 +1127,41 @@ return memo[[rows,columns]];
 
 class SortableArray
 {
-  initialize()
+  constructor(array)
   {
-    
+    this.array=array;
   }
-  partition()
+  partition(left_pointer,right_pointer)
   {
-
+    const pivot_index=right_pointer;
+    let pivot=this.array[pivot_index];
+    right_pointer--;
+    while (true)
+    {
+      while(this.array[left_pointer]<pivot)
+      {
+        left_pointer++;
+      }
+      while(this.array[right_pointer]>pivot)
+      {
+        right_pointer--;
+      }
+      if (left_pointer>=right_pointer)
+      {
+        break;
+      }
+      else
+      {
+        [this.array[left_pointer],this.array[right_pointer]]=[this.array[right_pointer],this.array[left_pointer]];
+        left_pointer++;
+      }
+    }
+  [this.array[left_pointer],this.array[pivot_index]]=[this.array[pivot_index],this.array[left_pointer]];
+  return left_pointer
   }
 }
+const test=new SortableArray([2,5,1,6,23,1,3]);
+
+console.log(test.partition(0,(test.array.length-1)));
 
 
-const newTest=new SortableArray();
