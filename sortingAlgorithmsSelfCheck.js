@@ -1177,7 +1177,7 @@ class SortableArray
     this.quicksort(pivot_index+1,right_index);
   }
 }
-const test=new SortableArray([2,5,1,6,23,1,3]);
+const test=new SortableArray([2,5,1,6,23,1,3,15]);
 console.log(test);
 //console.log(test.partition(0,(test.array.length-1)));
 test.quicksort(0,(test.array.length-1));
