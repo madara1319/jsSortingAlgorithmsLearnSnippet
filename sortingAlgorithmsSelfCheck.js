@@ -1182,3 +1182,5 @@ console.log(test);
 //console.log(test.partition(0,(test.array.length-1)));
 test.quicksort(0,(test.array.length-1));
 console.log(test.array);
+
+console.log(insertionSort(test));
