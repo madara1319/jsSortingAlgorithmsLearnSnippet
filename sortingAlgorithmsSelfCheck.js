@@ -1184,3 +1184,6 @@ test.quicksort(0,(test.array.length-1));
 console.log(test.array);
 
 console.log(insertionSort(test));
+
+console.log(dynamicFib(test));
+console.log(dynamicFib(test));
