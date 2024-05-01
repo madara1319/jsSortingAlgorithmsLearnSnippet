@@ -1187,5 +1187,5 @@ console.log(insertionSort(test));
 
 console.log(dynamicFib(test));
 
-console.log(simpleArray);
+console.log(isSorted(test));
 console.log(dynamicFib(test));
