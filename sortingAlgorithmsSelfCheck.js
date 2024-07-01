@@ -1189,3 +1189,4 @@ console.log(dynamicFib(test));
 
 console.log(isSorted(test));
 console.log(dynamicFib(test));
+console.log("quickcheck");
