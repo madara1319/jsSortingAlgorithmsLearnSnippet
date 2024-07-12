@@ -139,7 +139,7 @@ const biggestValueEqualToOccurence=(array)=>
 	return biggestValue;
 }
 
-//console.log(biggestValueEqualToOccurence([3,8,2,3,3,2]));
+console.log(biggestValueEqualToOccurence([3,8,2,3,3,2]));
 
 
 //const diverseWordBuilder=()=>(numberOfA, numberOfB, numberOfC)
