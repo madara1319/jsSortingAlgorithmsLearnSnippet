@@ -1,4 +1,5 @@
 let test__array = [30,29,28,26,27,20,19,18,17,16,15,14,13,12,10,9,8,7,6,5, 4, 3, 2, 1];
+let reverse_array=test__array.reverse();
 
 function linearSearch(array,value){
     const Len=array.length;
@@ -39,5 +40,16 @@ function binarySearch(array,value, start=0, end=array.length-1){
 console.log("testestset");
 }
 
+function selectionSort(array){
+    let lowestValue=array[0];
+    for (let i=0; i<array.length; i++){
+        if (array[i]<lowestValue){
+            lowestValue=array[i];
+            a
+        }
+    }
+}
+
 //linearSearch(test__array,1);
 binarySearch(test__array,1,0,test__array.length-1);
+binarySearch(reverse_array,1,0,test__array.length-1);
