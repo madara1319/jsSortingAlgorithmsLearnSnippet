@@ -2,56 +2,56 @@
 //Sorting algorithms
 //----------------------------------------------------------------
 let selectionSort = (array) => {
-  for (let i = 0; i < array.length - 1; i++) {
-    let lowestNumberIndex = i;
-    for (let j = i + 1; j < array.length; j++) {
-      if (array[j] < array[lowestNumberIndex]) {
-        lowestNumberIndex = j;
-      }
-      if (i != lowestNumberIndex) {
-        let temp = array[i];
-        array[i] = array[lowestNumberIndex];
-        array[lowestNumberIndex] = temp;
-      }
+    for (let i = 0; i < array.length - 1; i++) {
+        let lowestNumberIndex = i;
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[j] < array[lowestNumberIndex]) {
+                lowestNumberIndex = j;
+            }
+            if (i != lowestNumberIndex) {
+                let temp = array[i];
+                array[i] = array[lowestNumberIndex];
+                array[lowestNumberIndex] = temp;
+            }
+        }
     }
-  }
-  return array;
+    return array;
 };
 
 let bubbleSort = (array) => {
-  let unsortedRightIndex = array.length - 1;
-  let isSorted = false;
-  while (!isSorted) {
-    isSorted = true;
+    let unsortedRightIndex = array.length - 1;
+    let isSorted = false;
+    while (!isSorted) {
+        isSorted = true;
 
-    for (let i = 0; i < unsortedRightIndex; i++) {
-      if (array[i] > array[i + 1]) {
-        let temp = array[i];
-        array[i] = array[i + 1];
-        array[i + 1] = temp;
-        isSorted = false;
-      }
+        for (let i = 0; i < unsortedRightIndex; i++) {
+            if (array[i] > array[i + 1]) {
+                let temp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+                isSorted = false;
+            }
+        }
+        unsortedRightIndex--;
     }
-    unsortedRightIndex--;
-  }
-  return array;
+    return array;
 };
 
 let insertionSort = (array) => {
-  for (let i = 1; i < array.length; i++) {
-    let temp_value = array[i];
-    let position = i - 1;
-    while (position >= 0) {
-      if (array[position] > temp_value) {
-        array[position + 1] = array[position];
-        position = position - 1;
-      } else {
-        break;
-      }
-      array[position + 1] = temp_value;
+    for (let i = 1; i < array.length; i++) {
+        let temp_value = array[i];
+        let position = i - 1;
+        while (position >= 0) {
+            if (array[position] > temp_value) {
+                array[position + 1] = array[position];
+                position = position - 1;
+            } else {
+                break;
+            }
+            array[position + 1] = temp_value;
+        }
     }
-  }
-  return array;
+    return array;
 };
 
 //console.log(`array to be sorted`);
@@ -97,49 +97,42 @@ let insertionSort = (array) => {
 //let timeElapsedSelection=endTimeSelection-startTimeSelection;
 //console.log(`SelectionSort time ${1000*timeElapsedSelection}`);
 
-const biggestValueEqualToOccurence=(array)=>
-{
-	let resultsArray=[];
-	let valuesAsIndexesArray=[];
-	let indexofBiggestValue=0;
-	let biggestValue=array[0];
-	for (let i=0; i<array.length; i++)
-	{
-		if(typeof(valuesAsIndexesArray[array[i]])=='undefined')
-		{
+const biggestValueEqualToOccurence = (array) => {
+    let resultsArray = [];
+    let valuesAsIndexesArray = [];
+    let indexofBiggestValue = 0;
+    let biggestValue = array[0];
+    for (let i = 0; i < array.length; i++) {
+        if (typeof (valuesAsIndexesArray[array[i]]) == 'undefined') {
 
-			valuesAsIndexesArray[array[i]]=0;
-		}
-			valuesAsIndexesArray[array[i]]++;
-		}
-	for (let i=0; i<valuesAsIndexesArray.length; i++)
-	{
-		if (valuesAsIndexesArray[i]===i)
-		{
+            valuesAsIndexesArray[array[i]] = 0;
+        }
+        valuesAsIndexesArray[array[i]]++;
+    }
+    for (let i = 0; i < valuesAsIndexesArray.length; i++) {
+        if (valuesAsIndexesArray[i] === i) {
 
-			resultsArray.push(i);
-			biggestValue=valuesAsIndexesArray[i];
-			
-		}
-	}
-	for (let value of resultsArray)
-	{
-		biggestValue=value;
-		if(value>biggestValue)
-		{
+            resultsArray.push(i);
+            biggestValue = valuesAsIndexesArray[i];
 
-		biggestValue=value;
-		}
-	}
+        }
+    }
+    for (let value of resultsArray) {
+        biggestValue = value;
+        if (value > biggestValue) {
 
-		
+            biggestValue = value;
+        }
+    }
 
 
 
-	return biggestValue;
+
+
+    return biggestValue;
 }
 
-console.log(biggestValueEqualToOccurence([3,8,2,3,3,2]));
+console.log(biggestValueEqualToOccurence([3, 8, 2, 3, 3, 2]));
 
 
 //const diverseWordBuilder=()=>(numberOfA, numberOfB, numberOfC)
@@ -172,98 +165,87 @@ console.log(biggestValueEqualToOccurence([3,8,2,3,3,2]));
 //}
 
 
-let mergeArray=(array1,array2)=>
-{
-  let newArray=[];
-  let array_1_pointer=0;
-  let array_2_pointer=0;
-  while (array_1_pointer<array1.length || array_2_pointer<array2.length)
-  {
-    /*boundary for all element this will be false and inside wont be executed
-    if array_1_pointer will equal length which exceeds the array values so its zero 
-    the negation of this will give true and we will go into this inside
-    and execute this as if array 1 values ended and we have to push array 2 elements
-    also increment array_2_pointer the same does second else if as if we finished array 2
+let mergeArray = (array1, array2) => {
+    let newArray = [];
+    let array_1_pointer = 0;
+    let array_2_pointer = 0;
+    while (array_1_pointer < array1.length || array_2_pointer < array2.length) {
+        /*boundary for all element this will be false and inside wont be executed
+        if array_1_pointer will equal length which exceeds the array values so its zero 
+        the negation of this will give true and we will go into this inside
+        and execute this as if array 1 values ended and we have to push array 2 elements
+        also increment array_2_pointer the same does second else if as if we finished array 2
+        
+          */
+        if (!array1[array_1_pointer]) {
+            newArray.push(array2[array_2_pointer]);
+            array_2_pointer++;
+        }
+        else if (!array2[array_2_pointer]) {
+            newArray.push(array1[array_1_pointer]);
+            array_1_pointer++;
+        }
+        /*This if and else are main steps through elements element from one array is larger we push lower element 
+        to the final array and else does the same 
     
-      */
-    if (!array1[array_1_pointer])
-    {
-      newArray.push(array2[array_2_pointer]);
-      array_2_pointer++;
+          */
+        else if (array1[array_1_pointer] < array2[array_2_pointer]) {
+            newArray.push(array1[array_1_pointer]);
+            array_1_pointer++;
+        }
+        else {
+            newArray.push(array2[array_2_pointer]);
+            array_2_pointer++;
+        }
     }
-    else if (!array2[array_2_pointer])
-    {
-      newArray.push(array1[array_1_pointer]);
-      array_1_pointer++;
-    }
-    /*This if and else are main steps through elements element from one array is larger we push lower element 
-    to the final array and else does the same 
-
-      */
-    else if (array1[array_1_pointer]<array2[array_2_pointer])
-    {
-      newArray.push(array1[array_1_pointer]);
-      array_1_pointer++;
-    }
-    else
-    {
-      newArray.push(array2[array_2_pointer]);
-      array_2_pointer++;
-    }
-  }
-  return newArray;
+    return newArray;
 }
 
-let findNeedle=(needle,haystack)=>
-{
-  needleStartIndex=0;
-  /*
-  if needleStartIndex starts on the difference between these lenghts
-  it will end on the haystack end which will mean needle was moved max
-  to the right
-    */
-  while (needleStartIndex<=haystack.length-needle.length)
-  {
+let findNeedle = (needle, haystack) => {
+    needleStartIndex = 0;
     /*
-    If first character of needle is the same in haystack we enter loop and check 
-    the following characters if they also gonna match 
+    if needleStartIndex starts on the difference between these lenghts
+    it will end on the haystack end which will mean needle was moved max
+    to the right
       */
-    if (needle[0]==haystack[needleStartIndex])
-    {
-      /*
-        offset is for iterating over next characters in needle
-        */
-      let needleOffset=0;
-      while (needleOffset<needle.length)
-      {
+    while (needleStartIndex <= haystack.length - needle.length) {
         /*
-        if following characters dont match we break from loop. If all characters matched 
-        offset will be the lenght of needle -1 because last index incerement 1 lower
-
+        If first character of needle is the same in haystack we enter loop and check 
+        the following characters if they also gonna match 
           */
-        if (needle[needleOffset]!=haystack[needleStartIndex+needleOffset])
-          break;
-        else
-        {
-          if (needleOffset===needle.length-1)
-            return true;
+        if (needle[0] == haystack[needleStartIndex]) {
+            /*
+              offset is for iterating over next characters in needle
+              */
+            let needleOffset = 0;
+            while (needleOffset < needle.length) {
+                /*
+                if following characters dont match we break from loop. If all characters matched 
+                offset will be the lenght of needle -1 because last index incerement 1 lower
+        
+                  */
+                if (needle[needleOffset] != haystack[needleStartIndex + needleOffset])
+                    break;
+                else {
+                    if (needleOffset === needle.length - 1)
+                        return true;
+                }
+                /*
+                we increment offset as we move forward with matching characters
+                  */
+                needleOffset += 1;
+            }
+            /*
+            If we dont get matching first character we need to move forward haystack
+            and increment startingIndex
+              */
         }
-        /*
-        we increment offset as we move forward with matching characters
-          */
-        needleOffset+=1;
-      }
-      /*
-      If we dont get matching first character we need to move forward haystack
-      and increment startingIndex
-        */
+        needleStartIndex += 1;
     }
-    needleStartIndex+=1;
-  }
-  /*
-  If we dont find out string in main string it returns false
-    */
-  return false;
+    /*
+    If we dont find out string in main string it returns false
+      */
+    return false;
 }
 
 
@@ -280,39 +262,36 @@ let findNeedle=(needle,haystack)=>
 /*I sure understand that its O(N^3) but that innermost loop would run N/4 times
 as the book says im not so sure but whatever
   */
-function largestProduct(array){
-  let largestProductSoFar=array[0]*array[1]*array[2];
-  let i=0;
-  let overallICounter=0;
-  let overallJCounter=0;
-  let overallKCounter=0;
-  while (i<array.length)
-  {
+function largestProduct(array) {
+    let largestProductSoFar = array[0] * array[1] * array[2];
+    let i = 0;
+    let overallICounter = 0;
+    let overallJCounter = 0;
+    let overallKCounter = 0;
+    while (i < array.length) {
 
-  overallICounter+=1
+        overallICounter += 1
 
-    let j=i+1;
-    console.log(`To jest krok i = ${i}`);
-    while(j<array.length)
-    {
-      overallJCounter+=1;
-    console.log(`To jest krok j = ${j}`);
-      let k=j+1;
-      while(k<array.length)
-      {
-      overallKCounter+=1;
-    console.log(`To jest krok k = ${k}`);
-        if(array[i]*array[j]*array[k]>largestProductSoFar)
-          largestProductSoFar=array[i]*array[j]*array[k];
-        console.log(`largestProductSoFar wynosi => ${largestProductSoFar}`);
-      k+=1;
-      }
-    j+=1;
+        let j = i + 1;
+        console.log(`To jest krok i = ${i}`);
+        while (j < array.length) {
+            overallJCounter += 1;
+            console.log(`To jest krok j = ${j}`);
+            let k = j + 1;
+            while (k < array.length) {
+                overallKCounter += 1;
+                console.log(`To jest krok k = ${k}`);
+                if (array[i] * array[j] * array[k] > largestProductSoFar)
+                    largestProductSoFar = array[i] * array[j] * array[k];
+                console.log(`largestProductSoFar wynosi => ${largestProductSoFar}`);
+                k += 1;
+            }
+            j += 1;
+        }
+        i += 1;
     }
-  i+=1;
-  }
-  console.log(`overallICounter equals ${overallICounter} overallJCounter equals ${overallJCounter} overallKCounter equals ${overallKCounter}`);
-  return largestProductSoFar;
+    console.log(`overallICounter equals ${overallICounter} overallJCounter equals ${overallJCounter} overallKCounter equals ${overallKCounter}`);
+    return largestProductSoFar;
 
 }
 //console.log(largestProduct([1,2,3,4,5]));
@@ -322,132 +301,110 @@ function largestProduct(array){
 
 //------------------------------------------------------------------------
 //hashmaps maps etc
-function intersectionOfArrays(array1,array2)
-{
-  let largerArray;
-  let smallerArray;
-  let hashTable={};
-  let interSection=[];
-//not sure if size domination matters in this case
-  if(array1.length>array2.length)
-  {
-    largerArray=array1;
-    smallerArray=array2;
-}
-  else
-{
-  largerArray=array2;
-  smallerArray=array1;
-}
-for (const value of largerArray)
-{
-  hashTable[value]=true;
-}
-//console.table(hashTable);
-for (const value of smallerArray)
-{
-  if (!hashTable[value] || hashTable===undefined)
-  {
-    //console.log("chuj");
-    //return false;
-  }
-  else{
-
-interSection.push(value)
-  }
-}
-//console.table(interSection);
-return interSection;
-}
-
-function findDuplicatesInString(arrayOfStrings){
-  let hashTable={};
-  for (const element of arrayOfStrings)
-  {
-    if (hashTable[element])
-    {
-      console.log("Yoo first duplicate: " + element);
-      return hashTable;
+function intersectionOfArrays(array1, array2) {
+    let largerArray;
+    let smallerArray;
+    let hashTable = {};
+    let interSection = [];
+    //not sure if size domination matters in this case
+    if (array1.length > array2.length) {
+        largerArray = array1;
+        smallerArray = array2;
     }
-    else{
-
-    hashTable[element]=true;
+    else {
+        largerArray = array2;
+        smallerArray = array1;
     }
-  }
+    for (const value of largerArray) {
+        hashTable[value] = true;
+    }
+    //console.table(hashTable);
+    for (const value of smallerArray) {
+        if (!hashTable[value] || hashTable === undefined) {
+            //console.log("chuj");
+            //return false;
+        }
+        else {
+
+            interSection.push(value)
+        }
+    }
+    //console.table(interSection);
+    return interSection;
 }
 
-function findMissingAlphabetLetter(inputString)
-{
-  //part for creating alphabet map structure with false in letter values
-  let alphabet={};
-  const alpha = Array.from(Array(26)).map((e, i) => i + 65);
-  alphabet = alpha.map((x) => String.fromCharCode(x).toLowerCase());
-  const alphabetMap={};
-  for (const letter of alphabet)
-  {
-      alphabetMap[letter]=false;
-  }
-  //put letters from string as true in alphabetMap 
-  let lettersRegex=/[a-z]/g;
-  let charactersFromInputString=inputString.match(lettersRegex);
-  for(const letter of charactersFromInputString)
-  {
-      alphabetMap[letter]=true;
-  }
-  //find missing alphabet letters
-  for (const letter in alphabetMap)
-  {
-    if(!alphabetMap[letter])
-    {
-      return letter;
+function findDuplicatesInString(arrayOfStrings) {
+    let hashTable = {};
+    for (const element of arrayOfStrings) {
+        if (hashTable[element]) {
+            console.log("Yoo first duplicate: " + element);
+            return hashTable;
+        }
+        else {
+
+            hashTable[element] = true;
+        }
     }
-  }
+}
+
+function findMissingAlphabetLetter(inputString) {
+    //part for creating alphabet map structure with false in letter values
+    let alphabet = {};
+    const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+    alphabet = alpha.map((x) => String.fromCharCode(x).toLowerCase());
+    const alphabetMap = {};
+    for (const letter of alphabet) {
+        alphabetMap[letter] = false;
+    }
+    //put letters from string as true in alphabetMap 
+    let lettersRegex = /[a-z]/g;
+    let charactersFromInputString = inputString.match(lettersRegex);
+    for (const letter of charactersFromInputString) {
+        alphabetMap[letter] = true;
+    }
+    //find missing alphabet letters
+    for (const letter in alphabetMap) {
+        if (!alphabetMap[letter]) {
+            return letter;
+        }
+    }
 }
 
 
-function findFirstNonDuplicatedCharactersInAString(inputString)
-{
-  const charactersMap={};
-  const lettersRegex=/[a-z]/gi;
-  const charactersFromInputString=inputString.match(lettersRegex);
-  for (const character of charactersFromInputString)
-  {
-    if(charactersMap[character])
-    {
-      charactersMap[character]+=1;
+function findFirstNonDuplicatedCharactersInAString(inputString) {
+    const charactersMap = {};
+    const lettersRegex = /[a-z]/gi;
+    const charactersFromInputString = inputString.match(lettersRegex);
+    for (const character of charactersFromInputString) {
+        if (charactersMap[character]) {
+            charactersMap[character] += 1;
+        }
+        else if (charactersMap[character] == undefined) {
+            charactersMap[character] = 1;
+        }
     }
-    else if(charactersMap[character]==undefined){
-      charactersMap[character]=1;
+    for (const letter in charactersMap) {
+        if (charactersMap[letter] == 1) {
+            return letter;
+        }
     }
-  }
-for(const letter in charactersMap)
-{
-  if (charactersMap[letter]==1)
-  {
-    return letter;
-  }
-}
 }
 
 //------------------------------------------------------------------------
 //Stacks and Queues
-class Stack
-{
-  constructor(){
-    this.data=[];
-  }
-  push(element)
-  {
-    this.data.push(element);
-  }
-  pop()
-  {
-    return this.data.pop();
-  }
-  get read()
-  {
-    return this.data.slice(-1)[0];
-  }
+class Stack {
+    constructor() {
+        this.data = [];
+    }
+    push(element) {
+        this.data.push(element);
+    }
+    pop() {
+        return this.data.pop();
+    }
+    get read() {
+        return this.data.slice(-1)[0];
+    }
 
 }
 
@@ -469,84 +426,69 @@ class Stack
 
 
 
-class Linter
-{
-  constructor()
-  {
-    this.stack=new Stack();
-  }
-  lint(text)
-  {
-    text.split("").forEach((element)=>{
-      if (this.#is_opening_brace(element))
-      {
-        this.stack.push(element);
-      }
-      else if (this.#is_closing_brace(element))
-      {
-        //pop from stack
-        const popped_opening_brace=this.stack.pop();
-      
-      //if the stack was empty so what we popped was nil it means an opening brace is missing
-        if (!popped_opening_brace)
-        {
-          console.log(`${element} doest have opening brace`);
-          return 0 
-        }
-      //if popped opening brace doesnt match the current closing brace we produce an error
-        else if (this.#is_not_a_match(popped_opening_brace,element))
-        {
-          console.log(`${element} has mismatched opening brace`)
-          return 0 
-        }
-      }
-    })
-    if (this.stack.read)
-    {
-      console.log(`${this.stack.read} does not have closing brace`);
-      return 0 
+class Linter {
+    constructor() {
+        this.stack = new Stack();
     }
-    //console.log("true");
-    return 1
-  }
-  #is_opening_brace(element)
-  {
-    return ["(","[","{"].includes(element);
-  }
-  #is_closing_brace(element)
-  {
-    return [")","]","}"].includes(element);
-  }
-  #is_not_a_match(openingBrace,closingBrace)
-  {
-    const closingBraceMap={
-      "(":")",
-      "[":"]",
-      "{":"}"
-    };
-    return closingBrace!==closingBraceMap[openingBrace];
-  }
+    lint(text) {
+        text.split("").forEach((element) => {
+            if (this.#is_opening_brace(element)) {
+                this.stack.push(element);
+            }
+            else if (this.#is_closing_brace(element)) {
+                //pop from stack
+                const popped_opening_brace = this.stack.pop();
+
+                //if the stack was empty so what we popped was nil it means an opening brace is missing
+                if (!popped_opening_brace) {
+                    console.log(`${element} doest have opening brace`);
+                    return 0
+                }
+                //if popped opening brace doesnt match the current closing brace we produce an error
+                else if (this.#is_not_a_match(popped_opening_brace, element)) {
+                    console.log(`${element} has mismatched opening brace`)
+                    return 0
+                }
+            }
+        })
+        if (this.stack.read) {
+            console.log(`${this.stack.read} does not have closing brace`);
+            return 0
+        }
+        //console.log("true");
+        return 1
+    }
+    #is_opening_brace(element) {
+        return ["(", "[", "{"].includes(element);
+    }
+    #is_closing_brace(element) {
+        return [")", "]", "}"].includes(element);
+    }
+    #is_not_a_match(openingBrace, closingBrace) {
+        const closingBraceMap = {
+            "(": ")",
+            "[": "]",
+            "{": "}"
+        };
+        return closingBrace !== closingBraceMap[openingBrace];
+    }
 }
 
 
 
-class Queue 
-{
-  constructor(){
-    this.data=[];
-  }
-  enqueue(element)
-  {
-    this.data.push(element);
-  }
-  dequeue()
-  {
-    return this.data.shift();
-  }
-  get read()
-  {
-    return this.data.slice(0,1)[0];
-  }
+class Queue {
+    constructor() {
+        this.data = [];
+    }
+    enqueue(element) {
+        this.data.push(element);
+    }
+    dequeue() {
+        return this.data.shift();
+    }
+    get read() {
+        return this.data.slice(0, 1)[0];
+    }
 
 }
 
@@ -571,31 +513,25 @@ class Queue
 
 //linter.lint("([  var x = { y: [ 1 , 2 , 3 ] } )");
 
-class PrintManager 
-{
-  constructor()
-  {
-    this.queue=new Queue();
-  }
-  queuePrintJob(document)
-  {
-    this.queue.enqueue(document);
-  }
-  run()
-  {
-    //each time this loop runs we read the document ath the front of the queue
-    while (this.queue.read)
-    {
-      this.#print(this.queue.dequeue());
+class PrintManager {
+    constructor() {
+        this.queue = new Queue();
+    }
+    queuePrintJob(document) {
+        this.queue.enqueue(document);
+    }
+    run() {
+        //each time this loop runs we read the document ath the front of the queue
+        while (this.queue.read) {
+            this.#print(this.queue.dequeue());
+
+        }
 
     }
-
-  }
-  #print(document)
-  {
-    //code to run the actual printer would go here
-    console.log(document);
-  }
+    #print(document) {
+        //code to run the actual printer would go here
+        console.log(document);
+    }
 }
 
 
@@ -611,21 +547,19 @@ class PrintManager
 
 
 
-function reverseAString(string)
-{
-  let newString=""; 
-  const stackString=new Stack();
-  string.split("").forEach((element)=>{
-    
-    stackString.push(element);
+function reverseAString(string) {
+    let newString = "";
+    const stackString = new Stack();
+    string.split("").forEach((element) => {
 
-  })
+        stackString.push(element);
 
-  while(stackString.read)
-  {
-    newString+=`${stackString.pop()}`;
-  }
-  return newString;
+    })
+
+    while (stackString.read) {
+        newString += `${stackString.pop()}`;
+    }
+    return newString;
 }
 
 
@@ -634,51 +568,48 @@ function reverseAString(string)
 //------------------------------------------------------------------------
 //Recursive chapters
 //import filesystem module & path module
-const fs=require('fs');
-const path=require('path');
-function findOneLevelDirectories(directory)
-{
-  fs.readdirSync(directory).forEach((filename)=>{
-    const filePath=path.join(directory,filename);
-    if(fs.statSync(filePath).isDirectory() && filename!=="." && filename!==".."){
-      console.log(filePath);
+const fs = require('fs');
+const path = require('path');
+function findOneLevelDirectories(directory) {
+    fs.readdirSync(directory).forEach((filename) => {
+        const filePath = path.join(directory, filename);
+        if (fs.statSync(filePath).isDirectory() && filename !== "." && filename !== "..") {
+            console.log(filePath);
 
-    }
-  });
-
-}
-
-
-function findTwoLevelDirectories(directory)
-{
-  fs.readdirSync(directory).forEach((filename)=>{
-    const filePath=path.join(directory,filename);
-
-    if(fs.statSync(filePath).isDirectory() && filename!=="." && filename!==".."){
-      console.log(filePath);
-
-      fs.readdirSync(path.join(directory,filename)).forEach((innerFilename)=>{
-        const innerFilePath=path.join(directory,filename,innerFilename);
-        if (fs.statSync(innerFilePath).isDirectory() && innerFilename !== "." && innerFilename !==".."){
-          console.log(innerFilePath);
         }
-      });
-
-    }
-  });
+    });
 
 }
 
 
-function findDirectories(directory)
-{
-  fs.readdirSync(directory).forEach((filename)=>{
-    const filePath=path.join(directory,filename);
-    if(fs.statSync(filePath).isDirectory() && filename!=="." && filename!==".."){
-      console.log(filePath);
-      findDirectories(filePath);
-    }
-  });
+function findTwoLevelDirectories(directory) {
+    fs.readdirSync(directory).forEach((filename) => {
+        const filePath = path.join(directory, filename);
+
+        if (fs.statSync(filePath).isDirectory() && filename !== "." && filename !== "..") {
+            console.log(filePath);
+
+            fs.readdirSync(path.join(directory, filename)).forEach((innerFilename) => {
+                const innerFilePath = path.join(directory, filename, innerFilename);
+                if (fs.statSync(innerFilePath).isDirectory() && innerFilename !== "." && innerFilename !== "..") {
+                    console.log(innerFilePath);
+                }
+            });
+
+        }
+    });
+
+}
+
+
+function findDirectories(directory) {
+    fs.readdirSync(directory).forEach((filename) => {
+        const filePath = path.join(directory, filename);
+        if (fs.statSync(filePath).isDirectory() && filename !== "." && filename !== "..") {
+            console.log(filePath);
+            findDirectories(filePath);
+        }
+    });
 
 }
 
@@ -690,36 +621,30 @@ function findDirectories(directory)
 //findDirectories('C:/dev/');
 
 
-function sumNumbersBetweenTwoValues(low,high)
-{
-  if (low==high)
-  {
-   // console.log(low);
-    return low;
-  }
- //console.log( high + sum(low,high-1));
-  return (high + sum(low,high-1));
+function sumNumbersBetweenTwoValues(low, high) {
+    if (low == high) {
+        // console.log(low);
+        return low;
+    }
+    //console.log( high + sum(low,high-1));
+    return (high + sum(low, high - 1));
 }
 
 
 //console.log(sumNumbersBetweenTwoValues(1,10));
 
-function printNestedArrayContents(array)
-{
-  for (const element of array)
-  {
-    if (Number.isInteger(element))
-    {
-      
-      //basecase element of array is number
-      console.log(element);
+function printNestedArrayContents(array) {
+    for (const element of array) {
+        if (Number.isInteger(element)) {
+
+            //basecase element of array is number
+            console.log(element);
+        }
+        else {
+
+            printNestedArrayContents(element);
+        }
     }
-    else
-    {
-      
-      printNestedArrayContents(element);
-    }
-  }
 }
 
 
@@ -753,31 +678,27 @@ function printNestedArrayContents(array)
 //printNestedArrayContents(taskArray2);
 
 
-function double_array(array,index=0)
-{
-  //base case when index goes to end
-  if(index>=array.length)
-  {
-    return array;
-  }
-  array[index]*=2;
-  return double_array(array,index+1);
+function double_array(array, index = 0) {
+    //base case when index goes to end
+    if (index >= array.length) {
+        return array;
+    }
+    array[index] *= 2;
+    return double_array(array, index + 1);
 
 }
 
 
 
-function reverseAStringRecursive(testString)
-{
-  if (testString.length==1)
-  {
-    return testString[0];
-  }
-  return (
-    reverseAStringRecursive
-    (
-        testString.slice(1,testString.length)
-    )+testString[0]);
+function reverseAStringRecursive(testString) {
+    if (testString.length == 1) {
+        return testString[0];
+    }
+    return (
+        reverseAStringRecursive
+            (
+                testString.slice(1, testString.length)
+            ) + testString[0]);
 }
 
 
@@ -787,111 +708,96 @@ function reverseAStringRecursive(testString)
 //const b=(chujString[0]);
 //console.log(a+b);
 
-function countOccurencesOfX(exampleString)
-{
-  if (exampleString.length==0)
-  {
-    return 0;
-  }
-  if (exampleString[0]=="x")
-  {
-    return (1+countOccurencesOfX(exampleString.slice(1,exampleString.length)));
+function countOccurencesOfX(exampleString) {
+    if (exampleString.length == 0) {
+        return 0;
+    }
+    if (exampleString[0] == "x") {
+        return (1 + countOccurencesOfX(exampleString.slice(1, exampleString.length)));
 
-  }
-  else
-  {
-    return (countOccurencesOfX(exampleString.slice(1,exampleString.length)));
-  }
+    }
+    else {
+        return (countOccurencesOfX(exampleString.slice(1, exampleString.length)));
+    }
 }
 
 
 
 //console.log(countOccurencesOfX("axbxcxd"));
 
-function numberOfPaths(n)
-{
-  if(n<0)
-  {
-    return 0;
-  }
-  if (n==1||n==0)
-  {
-    return 1;
-  }
-  return (numberOfPaths(n-1)+numberOfPaths(n-2)+numberOfPaths(n-3));
+function numberOfPaths(n) {
+    if (n < 0) {
+        return 0;
+    }
+    if (n == 1 || n == 0) {
+        return 1;
+    }
+    return (numberOfPaths(n - 1) + numberOfPaths(n - 2) + numberOfPaths(n - 3));
 }
 
 //console.log(numberOfPaths(5));
 
 function anagramGenerator(justSomeString) {
-  if (justSomeString.length === 1) {
-    return [justSomeString];
-  }
+    if (justSomeString.length === 1) {
+        return [justSomeString];
+    }
 
-  let collection = [];
-  let substringAnagrams = anagramGenerator(justSomeString.slice(1));
+    let collection = [];
+    let substringAnagrams = anagramGenerator(justSomeString.slice(1));
 
-  for (const element of substringAnagrams) {
-    console.log("substringAnagrams: ");
-    console.table(substringAnagrams);
-    console.log("collection: ");
-    console.table(collection);
-    for (let i = 0; i <= element.length; i++) {
-      let copy = element.slice(0, i) + justSomeString[0] + element.slice(i);
-      console.log("element jest taki: " + element);
-      console.log("element.slice(0,i) wynosi: " + element.slice(0,i) + " Zas element slice(i) wynosi: " + element.slice(i));
-      console.log("justSomeString[0] wynosi: " + justSomeString[0]);
-      console.log("kopia numero: " + i + " kopa anagramu to " + copy);
-      console.log("_________________________________________________________");
-      collection.push(copy);
+    for (const element of substringAnagrams) {
+        console.log("substringAnagrams: ");
+        console.table(substringAnagrams);
+        console.log("collection: ");
+        console.table(collection);
+        for (let i = 0; i <= element.length; i++) {
+            let copy = element.slice(0, i) + justSomeString[0] + element.slice(i);
+            console.log("element jest taki: " + element);
+            console.log("element.slice(0,i) wynosi: " + element.slice(0, i) + " Zas element slice(i) wynosi: " + element.slice(i));
+            console.log("justSomeString[0] wynosi: " + justSomeString[0]);
+            console.log("kopia numero: " + i + " kopa anagramu to " + copy);
+            console.log("_________________________________________________________");
+            collection.push(copy);
+
+        }
 
     }
 
-  }
-
-  return collection;
+    return collection;
 }
 
 //console.log(anagramGenerator("abc"));
 
 
-function countCharactersOfStringsArray(stringsArray)
-{
-  if (stringsArray.length==1)
-  {
-    return stringsArray[0].length;
-  }
-  else if(stringsArray.length==0)
-  {
-    return 0;
-  }
-  else 
-  {
-    return stringsArray[0].length + countCharactersOfStringsArray(stringsArray.slice(1,stringsArray.length));
-  }
+function countCharactersOfStringsArray(stringsArray) {
+    if (stringsArray.length == 1) {
+        return stringsArray[0].length;
+    }
+    else if (stringsArray.length == 0) {
+        return 0;
+    }
+    else {
+        return stringsArray[0].length + countCharactersOfStringsArray(stringsArray.slice(1, stringsArray.length));
+    }
 }
 
 //console.log(countCharactersOfStringsArray(["ab","c","def","ghi"]));
 
 //console.log(countCharactersOfStringsArrar([]));
 
-function filterOddNumbers(arrayOfNumbers)
-{
+function filterOddNumbers(arrayOfNumbers) {
 
-  if (arrayOfNumbers.length==0)
-  {
-    return [];
-  }
-  else if (arrayOfNumbers[0]%2==0)
-  {
-    console.log("przypadek if: " + arrayOfNumbers.slice(1));
-      return [arrayOfNumbers[0], ...filterOddNumbers(arrayOfNumbers.slice(1))];
-  }
-  else
-  {
-    console.log("przypadek else: " + arrayOfNumbers.slice(1));
-    return (filterOddNumbers(arrayOfNumbers.slice(1)));
-  }
+    if (arrayOfNumbers.length == 0) {
+        return [];
+    }
+    else if (arrayOfNumbers[0] % 2 == 0) {
+        console.log("przypadek if: " + arrayOfNumbers.slice(1));
+        return [arrayOfNumbers[0], ...filterOddNumbers(arrayOfNumbers.slice(1))];
+    }
+    else {
+        console.log("przypadek else: " + arrayOfNumbers.slice(1));
+        return (filterOddNumbers(arrayOfNumbers.slice(1)));
+    }
 }
 
 //console.log("_________________________________");
@@ -899,202 +805,164 @@ function filterOddNumbers(arrayOfNumbers)
 //console.log(filterOddNumbers([1,2,3,4,5,6]));
 
 /*triangular numbers 1,3,6,10,15,21 nex number is N + previous number*/
-function triangularNumbers(exampleNumber)
-{
-  if (exampleNumber==0)
-  {
-    return 0;
-  }
-  else if(exampleNumber==1)
-  {
-    return 1;
+function triangularNumbers(exampleNumber) {
+    if (exampleNumber == 0) {
+        return 0;
+    }
+    else if (exampleNumber == 1) {
+        return 1;
 
-  }
-  else
-  {
-    return (exampleNumber+triangularNumbers(exampleNumber-1));
-  }
+    }
+    else {
+        return (exampleNumber + triangularNumbers(exampleNumber - 1));
+    }
 }
 
 //console.log(triangularNumbers(7));
 
-function findXIndex(supposedString,currentIndex=0)
-{
-  if (supposedString[0]=="x")
-  {
-    return currentIndex;
-  }
-  else if (supposedString.length==0)
-  {
-    return -1;
-  }
-  else
-  {
-    return findXIndex(supposedString.slice(1),currentIndex+1);
-  }
+function findXIndex(supposedString, currentIndex = 0) {
+    if (supposedString[0] == "x") {
+        return currentIndex;
+    }
+    else if (supposedString.length == 0) {
+        return -1;
+    }
+    else {
+        return findXIndex(supposedString.slice(1), currentIndex + 1);
+    }
 }
 //console.log(findXIndex("abcdeaasdxasd"));
 
 
-function UniquePaths(numberOfRows,numberOfColumns)
-{
+function UniquePaths(numberOfRows, numberOfColumns) {
 
-  console.log("recursion happened");
-  //calculate shortest path from going to upper-leftmost to lower-rightmost
-  if (numberOfRows==1 || numberOfColumns==1)
-  {
-    return 1;
-  }
-  else if (numberOfRows==0 || numberOfColumns==0)
-  {
-    return -1;
-  }
-  else
-  {
-    //subproblems are if u decrease one dimension and u gotta add solutions of the subproblems to get the problem result
-    return (UniquePaths(numberOfRows,(numberOfColumns-1))+UniquePaths((numberOfRows-1),numberOfColumns));
-  }
+    console.log("recursion happened");
+    //calculate shortest path from going to upper-leftmost to lower-rightmost
+    if (numberOfRows == 1 || numberOfColumns == 1) {
+        return 1;
+    }
+    else if (numberOfRows == 0 || numberOfColumns == 0) {
+        return -1;
+    }
+    else {
+        //subproblems are if u decrease one dimension and u gotta add solutions of the subproblems to get the problem result
+        return (UniquePaths(numberOfRows, (numberOfColumns - 1)) + UniquePaths((numberOfRows - 1), numberOfColumns));
+    }
 }
 
 //console.log(UniquePaths(3,3));
 
-function findArrayMaxValueWrong(simpleArray)
-{
-  console.log("RECURSION HAPPENED");
+function findArrayMaxValueWrong(simpleArray) {
+    console.log("RECURSION HAPPENED");
 
-  if (simpleArray.length==1)
-  {
-    return simpleArray[0];
-  }
-  else if(simpleArray.length==0)
-  {
-    return -1;
-  }
-  else if(simpleArray[0]>findArrayMaxValueWrong(simpleArray.slice(1,simpleArray.length)))
-  {
-    return simpleArray[0];
-  }
-  else 
-  {
-    return findArrayMaxValueWrong(simpleArray.slice(1,simpleArray.length))
-  }
+    if (simpleArray.length == 1) {
+        return simpleArray[0];
+    }
+    else if (simpleArray.length == 0) {
+        return -1;
+    }
+    else if (simpleArray[0] > findArrayMaxValueWrong(simpleArray.slice(1, simpleArray.length))) {
+        return simpleArray[0];
+    }
+    else {
+        return findArrayMaxValueWrong(simpleArray.slice(1, simpleArray.length))
+    }
 }
 
 //console.log(findArrayMaxValueWrong([1,2,3]));
 
-function findArrayMaxValue(simpleArray)
-{
-  console.log("RECURSION HAPPENED");
+function findArrayMaxValue(simpleArray) {
+    console.log("RECURSION HAPPENED");
 
-  if (simpleArray.length==1)
-  {
-    return simpleArray[0];
-  }
-  else if(simpleArray.length==0)
-  {
-    return -1;
-  }
+    if (simpleArray.length == 1) {
+        return simpleArray[0];
+    }
+    else if (simpleArray.length == 0) {
+        return -1;
+    }
 
-  let maxValue=findArrayMaxValue(simpleArray.slice(1,simpleArray.length));
-  if(simpleArray[0]>maxValue)
-  {
-    return simpleArray[0];
-  }
-  else 
-  {
-    return maxValue; 
-  }
+    let maxValue = findArrayMaxValue(simpleArray.slice(1, simpleArray.length));
+    if (simpleArray[0] > maxValue) {
+        return simpleArray[0];
+    }
+    else {
+        return maxValue;
+    }
 }
 //for only 4 values i get 15 recursion function calls
 //console.log(findArrayMaxValue([1,2,3,4]));
 
-function fibonacciSequence(yourNumber)
-{
-  if (yourNumber==0 || yourNumber==1)
-  {
-    return yourNumber;
-  }
-  else
-  {
-    return (fibonacciSequence(yourNumber-1)+fibonacciSequence(yourNumber-2))
-  }
+function fibonacciSequence(yourNumber) {
+    if (yourNumber == 0 || yourNumber == 1) {
+        return yourNumber;
+    }
+    else {
+        return (fibonacciSequence(yourNumber - 1) + fibonacciSequence(yourNumber - 2))
+    }
 }
 
 
 //console.log(fibonacciSequence(10));
 
 //memoization 1 of 2 optimizing techniques used in dynamic programming
-function dynamicFibonacci(fibNumber,memo={})
-{
-  if (fibNumber==0 || fibNumber==1)
-  {
-    return fibNumber;
-  }
-  else if (memo[fibNumber]==undefined)
-  {
-    memo[fibNumber]=dynamicFibonacci(fibNumber-2,memo)+dynamicFibonacci(fibNumber-1,memo);
-  }
+function dynamicFibonacci(fibNumber, memo = {}) {
+    if (fibNumber == 0 || fibNumber == 1) {
+        return fibNumber;
+    }
+    else if (memo[fibNumber] == undefined) {
+        memo[fibNumber] = dynamicFibonacci(fibNumber - 2, memo) + dynamicFibonacci(fibNumber - 1, memo);
+    }
 
-  return memo[fibNumber];
+    return memo[fibNumber];
 }
 
 //console.log(dynamicFibonacci(6));
 
 //2 dynamic coding optimization technique is using bottom-up technique for
 //problems that on first glance seem to need recursion
-function dynamicFib(n)
-{
-  if(n==0)
-  {
-    return 0;
-  }
-  let a=0;
-  let b=1;
-  for (let i=1; i<n; i++)
-  {
-    let temp=a;
-    a=b;
-    b=temp+a;
-  }
-  return b;
+function dynamicFib(n) {
+    if (n == 0) {
+        return 0;
+    }
+    let a = 0;
+    let b = 1;
+    for (let i = 1; i < n; i++) {
+        let temp = a;
+        a = b;
+        b = temp + a;
+    }
+    return b;
 }
 
 //console.log(dynamicFib(6));
 
 
-function add_until_100(array)
-{
-  console.log("recursion happened");
-  if (array.length==0)
-  {
-    return 0;
-  }
-  let temp=add_until_100(array.slice(1,array.length))
-  if ((array[0]+temp)>100)
-  {
-    return temp; 
+function add_until_100(array) {
+    console.log("recursion happened");
+    if (array.length == 0) {
+        return 0;
+    }
+    let temp = add_until_100(array.slice(1, array.length))
+    if ((array[0] + temp) > 100) {
+        return temp;
 
-  }
-  else 
-  {
-    return (array[0] + temp);
-  }
+    }
+    else {
+        return (array[0] + temp);
+    }
 }
 
 //console.log("test");
 //console.log(add_until_100([1,2,5,7,6,36,12,6,1,1,15]));
 
-function golomb(n,memo={})
-{
-  if (n==1)
-  {
-    return 1;
-  }
-  else if(memo!==undefined)
-  {
-    memo[n]=1+golomb(n - golomb(golomb(n-1,memo),memo),memo)
-  }
-  
+function golomb(n, memo = {}) {
+    if (n == 1) {
+        return 1;
+    }
+    else if (memo !== undefined) {
+        memo[n] = 1 + golomb(n - golomb(golomb(n - 1, memo), memo), memo)
+    }
+
 
     return memo[n];
 
@@ -1106,18 +974,15 @@ function golomb(n,memo={})
 //console.log("golomb od " + i + " wynosi: " + golomb(i));
 //}
 
-function UniquePathsMemo(rows,columns,memo={})
-{
-  console.log("recursion happened in memoization func");
-  if(rows==1||columns==1)
-  {
-    return 1;
-  }
-  else if(memo!==undefined)
-  {
-    memo[[rows,columns]]=UniquePathsMemo(rows-1,columns,memo) + UniquePathsMemo(rows,columns-1,memo)
-  }
-return memo[[rows,columns]];
+function UniquePathsMemo(rows, columns, memo = {}) {
+    console.log("recursion happened in memoization func");
+    if (rows == 1 || columns == 1) {
+        return 1;
+    }
+    else if (memo !== undefined) {
+        memo[[rows, columns]] = UniquePathsMemo(rows - 1, columns, memo) + UniquePathsMemo(rows, columns - 1, memo)
+    }
+    return memo[[rows, columns]];
 }
 //console.log(UniquePathsMemo(4,5));
 
@@ -1125,62 +990,52 @@ return memo[[rows,columns]];
 
 
 
-class SortableArray
-{
-  constructor(array)
-  {
-    this.array=array;
-  }
-  partition(left_pointer,right_pointer)
-  {
-    //will take pivot always as the right most index value
-    const pivot_index=right_pointer;
-    let pivot=this.array[pivot_index];
-    //will make right pointer go off pivot
-    right_pointer--;
-    while (true)
-    {
-      //start moving left pointer until value is lower than pivot
-      while(this.array[left_pointer]<pivot)
-      {
-        left_pointer++;
-      }
-      //start moving right pointer until value is higher than pivot
-      while(this.array[right_pointer]>pivot)
-      {
+class SortableArray {
+    constructor(array) {
+        this.array = array;
+    }
+    partition(left_pointer, right_pointer) {
+        //will take pivot always as the right most index value
+        const pivot_index = right_pointer;
+        let pivot = this.array[pivot_index];
+        //will make right pointer go off pivot
         right_pointer--;
-      }
-      //if they overcome each other or are equal go to next step
-      if (left_pointer>=right_pointer)
-      {
-        break;
-      }
-      else
-      {
-        //if left pointer is still lower than right  we switch their places
-        [this.array[left_pointer],this.array[right_pointer]]=[this.array[right_pointer],this.array[left_pointer]];
-        left_pointer++;
-      }
+        while (true) {
+            //start moving left pointer until value is lower than pivot
+            while (this.array[left_pointer] < pivot) {
+                left_pointer++;
+            }
+            //start moving right pointer until value is higher than pivot
+            while (this.array[right_pointer] > pivot) {
+                right_pointer--;
+            }
+            //if they overcome each other or are equal go to next step
+            if (left_pointer >= right_pointer) {
+                break;
+            }
+            else {
+                //if left pointer is still lower than right  we switch their places
+                [this.array[left_pointer], this.array[right_pointer]] = [this.array[right_pointer], this.array[left_pointer]];
+                left_pointer++;
+            }
+        }
+        [this.array[left_pointer], this.array[pivot_index]] = [this.array[pivot_index], this.array[left_pointer]];
+        return left_pointer
     }
-  [this.array[left_pointer],this.array[pivot_index]]=[this.array[pivot_index],this.array[left_pointer]];
-  return left_pointer
-  }
-  quicksort(left_index,right_index)
-  {
-    //basecase subarray has 0 or 1 element
-    if (right_index-left_index<=0)
-    {
-      return ;
+    quicksort(left_index, right_index) {
+        //basecase subarray has 0 or 1 element
+        if (right_index - left_index <= 0) {
+            return;
+        }
+        const pivot_index = this.partition(left_index, right_index);
+        this.quicksort(left_index, pivot_index - 1);
+        this.quicksort(pivot_index + 1, right_index);
     }
-    const pivot_index=this.partition(left_index,right_index);
-    this.quicksort(left_index,pivot_index-1);
-    this.quicksort(pivot_index+1,right_index);
-  }
 }
-const test=new SortableArray([2,5,1,6,23,1,3,15]);
+const test = new SortableArray([2, 5, 1, 6, 23, 1, 3, 15]);
 console.log(test);
 //console.log(test.partition(0,(test.array.length-1)));
-test.quicksort(0,(test.array.length-1));
+test.quicksort(0, (test.array.length - 1));
 console.log(test.array);
 
 console.log(insertionSort(test));
@@ -1190,3 +1045,4 @@ console.log(dynamicFib(test));
 console.log(isSorted(test));
 console.log(dynamicFib(test));
 console.log("quickcheck");
+
