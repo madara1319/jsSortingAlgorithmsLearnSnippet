@@ -13,11 +13,37 @@ const selectionSort = (array) => {
                 lowestValueIndex = i;
             }
         }
-        let temp=array[j]
+        let temp = array[j]
         array[j] = array[lowestValueIndex];
         array[lowestValueIndex] = temp;
     }
 }
+
+
+const descendingSelectionSort = (array) => {
+    for (i = 0; i < array.length - 1; i++) {
+        highestValueIndex = i
+        for (j = i + 1; j < array.length; j++) {
+            if (array[j] > array[highestValueIndex]) {
+                highestValueIndex = j
+            }
+        }
+        let temp=array[i] 
+        array[i]=array[highestValueIndex]
+        array[highestValueIndex]=temp
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 console.table(array)
-selectionSort(array);
+descendingSelectionSort(array);
 console.log(`nowe array to ${array}`)
