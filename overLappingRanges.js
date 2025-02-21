@@ -4,6 +4,7 @@
 
 const testArrayOne=[[2,4],[5,6],[8,11]];
 const testArrayTwo=[[1,3],[2,5]];
+const testArrayThree=[[5,8],[1,3],[7,12],[3,2]];
 
 const overlappingRanges=(array)=>{
     let indexesArray=[];
@@ -24,7 +25,24 @@ const overlappingRanges=(array)=>{
     }
     return true;
 }
-console.log(testArrayOne);
-console.log(overlappingRanges(testArrayOne))
-console.log(testArrayTwo);
-console.log(overlappingRanges(testArrayTwo))
+
+const overlappingRangesButBetter=(array)=>{
+    array=array.sort()
+    for (let i=0; i<array.length; i++){
+        if (i[1]>i[])
+        {
+            console.log("blad")
+        }
+        else{
+            console.log("ok");
+        }
+    }
+}
+
+
+console.log(testArrayThree);
+overlappingRanges(testArrayThree)
+//console.log(testArrayOne);
+//console.log(overlappingRanges(testArrayOne))
+//console.log(testArrayTwo);
+//console.log(overlappingRanges(testArrayTwo))
