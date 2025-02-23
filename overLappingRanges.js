@@ -4,6 +4,9 @@
 
 const testArrayOne=[[2,4],[5,6],[8,11]];
 const testArrayTwo=[[1,3],[2,5]];
+const testArrayThree=[[2,5],[1,3]];
+const testArrayFour=[[5,6],[2,4],[8,11]];
+
 
 const overlappingRanges=(array)=>{
     let indexesArray=[];
@@ -24,7 +27,29 @@ const overlappingRanges=(array)=>{
     }
     return true;
 }
-console.log(testArrayOne);
-console.log(overlappingRanges(testArrayOne))
-console.log(testArrayTwo);
-console.log(overlappingRanges(testArrayTwo))
+
+const checkIfRangesOverlap=(array)=>{
+    array.sort()
+    for (let i=0; i<array.length-1; i++){
+        if (array[i][1]>array[i+1][0])
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+}
+
+
+console.log(testArrayThree);
+console.log(checkIfRangesOverlap(testArrayThree));
+console.log(testArrayThree);
+console.log(testArrayFour);
+console.log(checkIfRangesOverlap(testArrayFour));
+console.log(testArrayFour);
+
+//console.log(testArrayOne);
+//console.log(overlappingRanges(testArrayOne))
+//console.log(testArrayTwo);
+//console.log(overlappingRanges(testArrayTwo))
