@@ -6,6 +6,9 @@ const testArrayOne=[[2,4],[5,6],[8,11]];
 const testArrayTwo=[[1,3],[2,5]];
 const testArrayThree=[[2,5],[1,3]];
 const testArrayFour=[[5,6],[2,4],[8,11]];
+const testArrayFive=[2,5,12,5,2,'a',false,'true','kaczka'];
+
+
 
 //const testArrayThree=[[5,8],[1,3],[7,12],[3,2]];
 
@@ -29,38 +32,33 @@ const overlappingRanges=(array)=>{
     return true;
 }
 
-const checkIfRangesOverlap=(array)=>{
-    array.sort()
+const checkIfRangesDontOverlap=(array)=>{
+    array.sort((a,b)=>a[0]-b[0])
     for (let i=0; i<array.length-1; i++){
         if (array[i][1]>array[i+1][0])
         {
             return false;
         }
-        else{
-            return true;
-const overlappingRangesButBetter=(array)=>{
-    array=array.sort()
-    for (let i=0; i<array.length; i++){
-        if (i[1]>i[])
-        {
-            console.log("blad")
-        }
-        else{
-            console.log("ok");
-        }
+        
     }
+    return true;
 }
 
 
-console.log(testArrayThree);
-console.log(checkIfRangesOverlap(testArrayThree));
-console.log(testArrayThree);
-console.log(testArrayFour);
-console.log(checkIfRangesOverlap(testArrayFour));
-console.log(testArrayFour);
+//console.log(testArrayThree);
+//console.log(checkIfRangesOverlap(testArrayThree));
+//console.log(testArrayThree);
+//console.log(testArrayFour);
+//console.log(checkIfRangesOverlap(testArrayFour));
+//console.log(testArrayFour);
+//overlappingRanges(testArrayThree)
+console.log(testArrayOne);
+console.log(overlappingRanges(testArrayOne))
+console.log(testArrayTwo);
+console.log(overlappingRanges(testArrayTwo))
 
-overlappingRanges(testArrayThree)
-//console.log(testArrayOne);
-//console.log(overlappingRanges(testArrayOne))
-//console.log(testArrayTwo);
-//console.log(overlappingRanges(testArrayTwo))
+
+//console.log(testArrayFive);
+//testArrayFive.sort((a,b)=>a-b)
+//
+//console.log(testArrayFive);
