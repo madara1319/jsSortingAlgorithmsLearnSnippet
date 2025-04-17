@@ -25,8 +25,30 @@ function BFS(node) {
     }
     return result;
 }
-//console.log(BFS(tree))
-//
+
+function DFS(node) {
+    if (!node) {
+        return [];
+    }
+    const stack = [node];
+    const result = [];
+    while (stack.length) {
+        let currentNode = stack.pop();
+        result.push(currentNode.value);
+        if (currentNode.right) {
+            stack.push(currentNode.right)
+        }
+        if (currentNode.left) {
+            stack.push(currentNode.left)
+        }
+    }
+    return result;
+}
+
+
+console.log('BFS traversal -> ' + BFS(tree))
+console.log('DFS traversal -> ' + DFS(tree))
+
 
 var convertBST = function(root) {
     let queue = root;
@@ -43,7 +65,7 @@ var convertBST = function(root) {
 
 
 
-let testRoot=[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
-console.log(convertBST(testRoot))
+//let testRoot=[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
+//console.log(convertBST(testRoot))
 
 
