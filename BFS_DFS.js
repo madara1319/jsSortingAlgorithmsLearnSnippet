@@ -108,26 +108,9 @@ function DFS_tree_traversal(node) {
 }
 
 
-//console.log('BFS traversal -> ' + BFS(tree))
-//console.log('DFS traversal -> ' + DFS(tree))
+console.log('BFS traversal -> ' + BFS_tree_traversal(tree))
+console.log('DFS traversal -> ' + DFS_tree_traversal(tree))
 
 
-var convertBST = function(root) {
-    let queue = root;
-    let result = [];
-    while (queue.length) {
-        let currentValue = queue.shift()
-        if (queue[1] !== null) {
-            currentValue += queue[1];
-        }
-        result.push(currentValue);
-    }
-    return result;
-};
-
-
-
-//let testRoot=[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
-//console.log(convertBST(testRoot))
 
 
