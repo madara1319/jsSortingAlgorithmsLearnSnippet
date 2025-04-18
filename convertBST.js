@@ -12,8 +12,8 @@ var convertBST = function(root) {
     let result = [];
     while (queue.length) {
         let currentValue = queue.shift()
-        if (queue[1] !== null) {
-            currentValue += queue[1];
+        if (queue[0] !== null) {
+            currentValue += queue[0];
         }
         result.push(currentValue);
     }
@@ -22,5 +22,5 @@ var convertBST = function(root) {
 
 
 
-//let testRoot=[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
-//console.log(convertBST(testRoot))
+let testRoot=[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
+console.log(convertBST(testRoot))
