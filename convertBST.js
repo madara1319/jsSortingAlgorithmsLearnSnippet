@@ -56,6 +56,25 @@ var convertBST = function(root) {
     return result;
 };
 
+function TreeNode(val, left, right) {
+    this.val = (val === undefined ? 0 : val)
+    this.left = (left === undefined ? null : left)
+    this.right = (right === undefined ? null : right)
+}
+var convertBST = function(root) {
+    let sum=0;
+    function convert(current){
+        if(current===null) return 
+        convert(current.right)
+        current.val+=sum
+        sum=current.val
+        convert(current.left)
+
+    }
+    convert(root)
+    return root
+};
+
 
 
 let testRoot=[4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
