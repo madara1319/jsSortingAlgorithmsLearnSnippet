@@ -850,7 +850,7 @@ function UniquePaths(numberOfRows, numberOfColumns) {
     }
 }
 
-//console.log(UniquePaths(3,3));
+console.log(UniquePaths(3,3));
 
 function findArrayMaxValueWrong(simpleArray) {
     console.log("RECURSION HAPPENED");
